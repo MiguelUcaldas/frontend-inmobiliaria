@@ -35,6 +35,9 @@ export class IndentificacionUsuarioComponent {
       this.servicioSeguridad.IdentificarUsuario(usuario, claveCifrada).subscribe({
         next: (datos: usuarioModel) => {
           console.log(datos)
+          if(this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)){
+            this.router.navigate(["/seguridad/2fa"]);
+          }
         },
         error: (err) => {
           console.log(err);
