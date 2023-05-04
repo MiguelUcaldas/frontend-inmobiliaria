@@ -136,4 +136,10 @@ export class SeguridadService {
       datos
     })
   }
+
+  ValidarHashUsuarioPublico(hash:string):Observable<boolean>{
+    return this.http.post<boolean>(`${this.urlBase}validar-hash-usuario`,{
+      hash:hash
+    });
+  }
 }

@@ -6,7 +6,7 @@ import { IndentificacionUsuarioComponent } from './modulos/seguridad/indentifica
 import { CambiarClaveComponent } from './modulos/seguridad/cambiar-clave/cambiar-clave.component';
 import { RecuperarClaveComponent } from './modulos/seguridad/recuperar-clave/recuperar-clave.component';
 import { Verificar2FAComponent } from './modulos/seguridad/verificar2-fa/verificar2-fa.component';
-import { CerrarSeccionComponent } from './modulos/seguridad/cerrar-sesion/cerrar-sesion.component';
+import { CerrarSesionComponent } from './modulos/seguridad/cerrar-sesion/cerrar-sesion.component';
 
 const routes: Routes = [
   {

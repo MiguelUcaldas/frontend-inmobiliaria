@@ -8,7 +8,7 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
   templateUrl: './registro-public-usuarios.component.html',
   styleUrls: ['./registro-public-usuarios.component.css']
 })
-export class RegistroPublicoUsuariosComponent {
+export class RegistroPublicUsuariosComponent {
   fGroup: FormGroup = new FormGroup({});
 
   constructor(
