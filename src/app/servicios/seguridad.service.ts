@@ -81,9 +81,27 @@ export class SeguridadService {
     } else {
       let datosString = JSON.stringify(datos);
       localStorage.setItem("datos-sesion", datosString);
+      this.ActualizarComportamientoUsuario(datos);
       return true;
     }
   }
+/**
+ * Cerrando Sesion
+ */
+  RemoverDatosUsuarioValidado() {
+    let datosUsuario = localStorage.getItem("datos-usuario");
+    let datosSesion = localStorage.getItem("datos-sesion");
+    if (datosUsuario) {
+      localStorage.removeItem("datos-usuario");
+    }
+    if (datosSesion) {
+      localStorage.removeItem("datos-sesion");
+    }
+    this.ActualizarComportamientoUsuario(new UsuarioValidadoModel());
+  }
+
+
+
   /**
    * Administracion de la sesion del usuario
    */
@@ -105,5 +123,17 @@ export class SeguridadService {
 
   ActualizarComportamientoUsuario(datos: UsuarioValidadoModel) {
     return this.datosUsuarioValidado.next(datos);
+  }
+
+  RecuperarClavePorUsuario(usuario:string):Observable<usuarioModel>{
+    return this.http.post<usuarioModel>(`${this.urlBase}recuperar-clave`,{
+      correo:usuario
+    });
+  }
+
+  RegistrarUsuarioPublico(datos : any):Observable<usuarioModel>{
+    return this.http.post<usuarioModel>(`${this.urlBase}usuario-publico`,{
+      datos
+    })
   }
 }

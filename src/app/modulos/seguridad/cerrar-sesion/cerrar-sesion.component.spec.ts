@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CerrarSeccionComponent } from './cerrar-seccion.component';
+import { CerrarSesionComponent } from './cerrar-sesion.component';
 
 describe('CerrarSeccionComponent', () => {
-  let component: CerrarSeccionComponent;
-  let fixture: ComponentFixture<CerrarSeccionComponent>;
+  let component: CerrarSesionComponent;
+  let fixture: ComponentFixture<CerrarSesionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CerrarSeccionComponent ]
+      declarations: [ CerrarSesionComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CerrarSeccionComponent);
+    fixture = TestBed.createComponent(CerrarSesionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

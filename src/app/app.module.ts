@@ -10,6 +10,7 @@ import { RutaNoEncontradaComponent } from './publico/manejo-errores/ruta-no-enco
 import { ErrorDeServidorComponent } from './publico/manejo-errores/error-de-servidor/error-de-servidor.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
 import {HttpClientModule} from '@angular/common/http';
+import { RegistroPublicUsuariosComponent } from './modulos/seguridad/registro-public-usuarios/registro-public-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpClientModule} from '@angular/common/http';
     MenuLateralComponent,
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
-    InicioComponent
+    InicioComponent,
+    RegistroPublicUsuariosComponent
   ],
   imports: [
     BrowserModule,

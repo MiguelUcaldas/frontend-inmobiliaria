@@ -10,7 +10,7 @@ import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.com
 import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.component';
 import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
 import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
-import { CerrarSeccionComponent } from './cerrar-seccion/cerrar-seccion.component';
+import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -24,7 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditarUsuarioComponent,
     ListarUsuarioComponent,
     EliminarUsuarioComponent,
-    CerrarSeccionComponent
+    CerrarSesionComponent
   ],
   imports: [
     CommonModule,

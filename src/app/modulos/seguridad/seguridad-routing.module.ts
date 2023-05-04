@@ -4,7 +4,8 @@ import { IndentificacionUsuarioComponent } from './indentificacion-usuario/inden
 import { CambiarClaveComponent } from './cambiar-clave/cambiar-clave.component';
 import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
 import { Verificar2FAComponent } from './verificar2-fa/verificar2-fa.component';
-import { CerrarSeccionComponent } from './cerrar-seccion/cerrar-seccion.component';
+import { CerrarSesionComponent} from './cerrar-sesion/cerrar-sesion.component';
+import { RegistroPublicUsuariosComponent } from './registro-public-usuarios/registro-public-usuarios.component';
 
 const routes: Routes = [
      {
@@ -24,8 +25,12 @@ const routes: Routes = [
       component: Verificar2FAComponent
     },
     {
-      path:"cerrar-seccion",
-      component: CerrarSeccionComponent
+      path:"cerrar-sesion",
+      component: CerrarSesionComponent
+    },
+    {
+      path:"registro-public",
+      component: RegistroPublicUsuariosComponent
     },
 ];
 

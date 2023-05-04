@@ -24,7 +24,7 @@ export class RecuperarClaveComponent {
     });
   }
 
-  /*RecuperarClave() {
+  RecuperarClave() {
     if (this.fGroup.invalid) {
       alert("Debe ingresar los datos del usuario");
     }else{
@@ -38,9 +38,7 @@ export class RecuperarClaveComponent {
         }
       });
     }
-  }*/
-
-  RecuperarClave(){}
+  }
 
   get obtenerFormGroup(){
     return this.fGroup.controls;
