@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { usuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
+import { MD5 } from 'crypto-js';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-indentificacion-usuario',
@@ -14,7 +16,8 @@ export class IndentificacionUsuarioComponent {
 
   constructor(
     private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
+    private router : Router
   ) {
 
   }
