@@ -7,9 +7,13 @@ import { Verificar2FAComponent } from './verificar2-fa/verificar2-fa.component';
 import { CerrarSesionComponent} from './cerrar-sesion/cerrar-sesion.component';
 import { RegistroPublicUsuariosComponent } from './registro-public-usuarios/registro-public-usuarios.component';
 import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
+import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
+import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
+import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.component';
+import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
 
 const routes: Routes = [
-     {
+    {
       path:"identificacion-usuario",
       component: IndentificacionUsuarioComponent
     },
@@ -37,6 +41,22 @@ const routes: Routes = [
       path:"validad-hash-usuario-publico/:hash",
       component: ValidarHashUsuarioPublicoComponent
     },
+    {
+      path:"usuario-crear",
+      component:CrearUsuarioComponent
+    },
+    {
+      path:"usuario-listar",
+      component:ListarUsuarioComponent
+    },
+    {
+      path:"usuario-editar/:id",
+      component:EditarUsuarioComponent
+    },
+    {
+      path:"usuario-eliminar",
+      component:EliminarUsuarioComponent
+    }
 ];
 
 @NgModule({
