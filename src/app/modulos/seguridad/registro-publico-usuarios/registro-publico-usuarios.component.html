@@ -1,7 +1,6 @@
-<!--
-<div class="row">
+<div class="col">
   <form [formGroup]="fGroup" class="col s12">
-    <div class="row">
+    <div class="col">
       <div class="input-field col s3">
         <input formControlName="primerNombre" id="primerNombre" type="text" class="validate" />
         <label for="primerNombre">Primer Nombre</label>
@@ -19,7 +18,7 @@
         <label for="segundoApellido">Segundo Apellido</label>
       </div>
     </div>
-    <div class="row">
+    <div class="col">
       <div class="input-field col s8">
         <input formControlName="correo" id="email" type="email" class="validate" />
         <label for="email">Correo</label>
@@ -29,18 +28,12 @@
         <label for="telefono">Teléfono Celular</label>
       </div>
     </div>
-    <div class="row">
+    <div class="col">
       <div class="col s12">
-        <button
-          class="btn waves-effect waves-light"
-          type="button"
-          (click)="Registrarse()"
-        >
-          Registrarse
+        <button class="btn waves-effect waves-light" id="registrarse" type="button" (click)="Registrarse()">Enviar
           <i class="material-icons right">send</i>
         </button>
       </div>
     </div>
   </form>
 </div>
--->

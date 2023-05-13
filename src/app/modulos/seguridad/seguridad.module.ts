@@ -12,7 +12,9 @@ import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.
 import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
 import { CerrarSesionComponent } from './cerrar-sesion/cerrar-sesion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
 import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
+import { ConctactenosComponent } from './contactenos/contactenos.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publi
     ListarUsuarioComponent,
     EliminarUsuarioComponent,
     CerrarSesionComponent,
-    ValidarHashUsuarioPublicoComponent
+    RegistroPublicoUsuariosComponent,
+    ValidarHashUsuarioPublicoComponent,
+    ConctactenosComponent
   ],
   imports: [
     CommonModule,

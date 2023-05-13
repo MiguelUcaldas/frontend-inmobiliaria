@@ -88,9 +88,9 @@ export class SeguridadService {
       return true;
     }
   }
-/**
- * Cerrando Sesion
- */
+  /**
+   * Cerrando Sesion
+   */
   RemoverDatosUsuarioValidado() {
     let datosUsuario = localStorage.getItem("datos-usuario");
     let datosSesion = localStorage.getItem("datos-sesion");
@@ -128,21 +128,25 @@ export class SeguridadService {
     return this.datosUsuarioValidado.next(datos);
   }
 
-  RecuperarClavePorUsuario(usuario:string):Observable<usuarioModel>{
-    return this.http.post<usuarioModel>(`${this.urlBase}recuperar-clave`,{
-      correo:usuario
+  RecuperarClavePorUsuario(usuario: string): Observable<usuarioModel> {
+    return this.http.post<usuarioModel>(`${this.urlBase}recuperar-clave`, {
+      correo: usuario
     });
   }
 
-  RegistrarUsuarioPublico(datos : any):Observable<usuarioModel>{
-    return this.http.post<usuarioModel>(`${this.urlBase}usuario-publico`,{
-      datos
-    })
+  RegistrarUsuarioPublico(datos: any): Observable<usuarioModel> {
+    return this.http.post<usuarioModel>(`${this.urlBase}usuario-publico`, datos);
   }
 
-  ValidarHashUsuarioPublico(hash:string):Observable<boolean>{
-    return this.http.post<boolean>(`${this.urlBase}validar-hash-usuario`,{
-      hash:hash
+  ValidarHashUsuarioPublico(hash: string): Observable<boolean> {
+    return this.http.post<boolean>(`${this.urlBase}validar-hash-usuario`, {
+      hash: hash
+    });
+  }
+
+  EnvioCorreoContactenos(datos: any): Observable<usuarioModel> {
+    return this.http.post<usuarioModel>(`${this.urlBase}contactenos`, {
+      datos
     });
   }
 
@@ -151,11 +155,11 @@ export class SeguridadService {
    * @param datos datos del usuario validado
    * @returns respuesta
    */
-  almacenarDatosUsuarioValidado(datos: UsuarioValidadoModel): boolean{
+  almacenarDatosUsuarioValidado(datos: UsuarioValidadoModel): boolean {
     let datosLS = localStorage.getItem("datos-sesion");
-    if(datosLS != null){
+    if (datosLS != null) {
       return false;
-    }else{
+    } else {
       let datosString = JSON.stringify(datos);
       localStorage.setItem("datos-sesion", datosString);
       this.ActualizarComportamientoUsuario(datos);
@@ -181,7 +185,7 @@ export class SeguridadService {
   }
 
   /**
-   * 
+   *
    * @param itemsMenu items del menú a guardar en ls
    */
   AlmacenarItemsMenuLateral(itemsMenu: ItemMenuModel[]) {
@@ -190,7 +194,7 @@ export class SeguridadService {
   }
 
   /**
-   * 
+   *
    * @returns lista con items del menú
    */
   ObtenerItemsMenuLateral(): ItemMenuModel[] {

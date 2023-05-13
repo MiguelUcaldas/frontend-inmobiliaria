@@ -5,12 +5,13 @@ import { CambiarClaveComponent } from './cambiar-clave/cambiar-clave.component';
 import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.component';
 import { Verificar2FAComponent } from './verificar2-fa/verificar2-fa.component';
 import { CerrarSesionComponent} from './cerrar-sesion/cerrar-sesion.component';
-import { RegistroPublicUsuariosComponent } from './registro-public-usuarios/registro-public-usuarios.component';
+import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
 import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
 import { CrearUsuarioComponent } from './usuario/crear-usuario/crear-usuario.component';
 import { ListarUsuarioComponent } from './usuario/listar-usuario/listar-usuario.component';
 import { EditarUsuarioComponent } from './usuario/editar-usuario/editar-usuario.component';
 import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
+import { ConctactenosComponent } from './contactenos/contactenos.component';
 
 const routes: Routes = [
     {
@@ -34,9 +35,15 @@ const routes: Routes = [
       component: CerrarSesionComponent
     },
     {
-      path:"registro-public",
-      component: RegistroPublicUsuariosComponent
+      path:"registro-publico",
+      component: RegistroPublicoUsuariosComponent
     },
+
+    {
+      path:"contactenos",
+      component: ConctactenosComponent
+    },
+
     {
       path:"validad-hash-usuario-publico/:hash",
       component: ValidarHashUsuarioPublicoComponent

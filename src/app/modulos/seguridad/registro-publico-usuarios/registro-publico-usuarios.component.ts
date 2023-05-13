@@ -4,11 +4,11 @@ import { usuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 @Component({
-  selector: 'app-registro-public-usuarios',
-  templateUrl: './registro-public-usuarios.component.html',
-  styleUrls: ['./registro-public-usuarios.component.css']
+  selector: 'app-registro-publico-usuarios',
+  templateUrl: './registro-publico-usuarios.component.html',
+  styleUrls: ['./registro-publico-usuarios.component.css']
 })
-export class RegistroPublicUsuariosComponent {
+export class RegistroPublicoUsuariosComponent {
   fGroup: FormGroup = new FormGroup({});
 
   constructor(
