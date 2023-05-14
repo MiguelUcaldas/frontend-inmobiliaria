@@ -1,12 +1,12 @@
-<nav class="black">
-  <div class="nav-wrapper">
+<nav class="encabezado">
+  <div class="nav-wrapper" id="encabezado">
     <a routerLink="/inicio" class="brand-logo">
       <img src = "../../../../assets/logo.png" atl="Logo">
       Akinmueble</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a *ngIf="!sesionActiva" routerLink="/seguridad/identificacion-usuario">Iniciar Sesion</a></li>
       <li><a *ngIf="!sesionActiva" routerLink="/seguridad/cambiar-clave">Cambiar Contraseña</a></li>
-      <li><a *ngIf="sesionActiva" routerLink="/inicio">Cerrar Sesion</a></li>
+      <li><a *ngIf="!sesionActiva" routerLink="/inicio">Cerrar Sesion</a></li>
     </ul>
   </div>
 </nav>
