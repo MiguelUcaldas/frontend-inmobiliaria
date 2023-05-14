@@ -49,7 +49,8 @@ export class IndentificacionUsuarioComponent {
           } else {
             console.log(datos)
             if (this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)) {
-            this.router.navigate(["/seguridad/2fa"]);
+            console.log("llega hasta aqui")
+            this.router.navigate(["/seguridad/verificar2-fa"]);
             }
           }
         },

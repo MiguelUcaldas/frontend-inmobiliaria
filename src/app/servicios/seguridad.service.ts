@@ -37,11 +37,11 @@ export class SeguridadService {
 
   AlmacenarDatosUsuarioIdentificado(datos: usuarioModel): boolean {
     let cadena = JSON.stringify(datos);
-    let datosLS = localStorage.getItem("datos-usuario");
+    let datosLS = localStorage.getItem("datos");
     if (datosLS) {
       return false;
     } else {
-      localStorage.setItem("datos-usuario", cadena);
+      localStorage.setItem("datos", cadena);
       return true;
     }
   }
