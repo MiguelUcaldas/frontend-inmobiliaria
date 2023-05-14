@@ -37,11 +37,11 @@ export class SeguridadService {
 
   AlmacenarDatosUsuarioIdentificado(datos: usuarioModel): boolean {
     let cadena = JSON.stringify(datos);
-    let datosLS = localStorage.getItem("datos");
+    let datosLS = localStorage.getItem("datos-usuario");
     if (datosLS) {
       return false;
     } else {
-      localStorage.setItem("datos", cadena);
+      localStorage.setItem("datos-usuario", cadena);
       return true;
     }
   }
@@ -65,7 +65,7 @@ export class SeguridadService {
    * @returns
    */
   ValidarCodigo2FA(idUsuario: string, codigo: string): Observable<UsuarioValidadoModel> {
-    return this.http.post<UsuarioValidadoModel>(`${this.urlBase}verificacion-2fa`, {
+    return this.http.post<UsuarioValidadoModel>(`${this.urlBase}verificar-2fa`, {
       usuarioId: idUsuario,
       codigo2fa: codigo
     });
