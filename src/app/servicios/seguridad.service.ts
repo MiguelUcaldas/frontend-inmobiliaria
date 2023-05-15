@@ -99,6 +99,7 @@ export class SeguridadService {
     if (datosSesion) {
       localStorage.removeItem("datos-sesion");
     }
+    localStorage.removeItem("menu-lateral");
     this.ActualizarComportamientoUsuario(new UsuarioValidadoModel());
   }
 
