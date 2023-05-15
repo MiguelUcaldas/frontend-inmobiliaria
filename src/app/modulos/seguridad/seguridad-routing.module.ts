@@ -14,6 +14,7 @@ import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-us
 import { ConctactenosComponent } from './contactenos/contactenos.component';
 import { ValidarSesionInactivaGuard } from 'src/app/guardianes/validar-sesion-inactiva.guard';
 import { ValidarSesionActivaGuard } from 'src/app/guardianes/validar-sesion-activa.guard';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 
 const routes: Routes = [
     {
@@ -51,6 +52,11 @@ const routes: Routes = [
     {
       path:"contactenos",
       component: ConctactenosComponent
+    },
+
+    {
+      path:"nosotros",
+      component: NosotrosComponent
     },
 
     {
