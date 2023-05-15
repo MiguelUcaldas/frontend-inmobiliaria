@@ -8,7 +8,6 @@ import { ConfiguracionMenuLateral } from '../config/configuracion.menu.lateral';
 import { ItemMenuModel } from '../modelos/item.menu.model';
 import { PermisoModel } from '../modelos/permiso.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -116,12 +115,14 @@ export class SeguridadService {
 
   }
 
-  validacionDeSesion() {
+  validacionDeSesion():UsuarioValidadoModel | null {
     let ls = localStorage.getItem("datos-sesion");
     if (ls) {
       let objUsuario = JSON.parse(ls);
       this.ActualizarComportamientoUsuario(objUsuario);
+      return objUsuario;
     }
+    return null;
   }
 
   ActualizarComportamientoUsuario(datos: UsuarioValidadoModel) {

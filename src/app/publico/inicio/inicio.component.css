@@ -5,16 +5,6 @@ h6{
   font-family: 'Comic Sans MS';
 }
 
-
-footer{
-  background-color: black;
-  color: white;
-  font-family: 'Comic Sans MS';
-  width: 100%;
-  height: auto;
-  position: relative;
-}
-
 #venta{
   background-color: black;
   font-family: 'Comic Sans MS';
@@ -35,3 +25,4 @@ footer{
   height: 200px;
   object-fit: cover;
 }
+

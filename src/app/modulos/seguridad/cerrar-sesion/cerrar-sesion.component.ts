@@ -17,6 +17,6 @@ constructor (
   }
   cerrarSesion() {
     this.servicioSeguridad.RemoverDatosUsuarioValidado();
-    this.router.navigate([""]);
+    this.router.navigate(["/seguridad/identificacion-usuario"]);
   }
 }

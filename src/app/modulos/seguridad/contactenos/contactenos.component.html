@@ -1,4 +1,4 @@
-<div class="col" id="nombre">
+<div class="col nombre" id="nombre">
   <form [formGroup]="fGroup" class="col s12">
     <div class="col">
       <div class="input-field col s3">
@@ -6,12 +6,12 @@
         <label for="Nombre"> Nombre Completo</label>
       </div>
     </div>
-    <div class="col" id="nombre">
-      <div class="input-field col s8">
+    <div class="col" >
+      <div class="input-field col s8" id="correo">
         <input formControlName="correo" id="email" type="email" class="validate" />
         <label for="email">Correo</label>
       </div>
-      <div class="input-field col s4">
+      <div class="input-field col s4" id="asunto">
         <input formControlName="Asunto" id="Asunto" type="text" class="validate" />
         <label for="Asunto">Asunto</label>
       </div>
@@ -20,7 +20,7 @@
       <textarea formControlName="Descripcion" id="Descripcion" type="text" class="validate"></textarea>
       <label for="Descripcion">Descripcion</label>
     </div>
-    <div class="col">
+    <div class="col" id="boton">
       <div class="col s12">
         <button class="btn waves-effect waves-light" type="button" (click)="EnviarCorreo()">Enviar
           <i class="material-icons right">send</i>

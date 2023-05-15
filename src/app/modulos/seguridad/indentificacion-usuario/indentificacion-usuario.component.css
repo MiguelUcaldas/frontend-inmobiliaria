@@ -1,7 +1,8 @@
 #login-page {
     width: 500px;
+    font-family: 'Comic Sans MS';
  }
- 
+
  .card {
       position: absolute;
       left: 50%;
@@ -15,4 +16,20 @@
 
  .show-errors{
      color: red;
+ }
+
+ #iniciar{
+  font-family:'Comic Sans MS';
+ }
+
+ #identificar button{
+  font-family: 'Comic Sans MS';
+  background-color: black;
+  color:aliceblue;
+ }
+
+ #opcion{
+  font-family: 'Comic Sans MS';
+  color: black;
+
  }

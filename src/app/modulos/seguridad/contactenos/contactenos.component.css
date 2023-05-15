@@ -1,4 +1,42 @@
 textarea#Descripcion {
-  width: 950px;
+  width: 900px;
   height: 280px;
+  font-family: 'Comic Sans MS';
 }
+
+.card {
+  position: absolute;
+  font-family: 'Comic Sans MS';
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#Nombre {
+  font-family: 'Comic Sans MS';
+}
+
+#email {
+  font-family: 'Comic Sans MS';
+}
+
+#Asunto {
+  font-family: 'Comic Sans MS';
+}
+
+
+#boton button {
+  font-family: 'Comic Sans MS';
+  background-color: black;
+  color: aliceblue;
+}
+
+#nombre {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+

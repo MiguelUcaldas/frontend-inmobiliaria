@@ -1,7 +1,7 @@
 #login-page {
     width: 500px;
  }
- 
+
  .card {
       position: absolute;
       left: 50%;
@@ -15,4 +15,10 @@
 
  .show-errors{
      color: red;
+ }
+
+ #boton button{
+  font-family: 'Comic Sans MS';
+  background-color: black;
+  color:aliceblue;
  }
