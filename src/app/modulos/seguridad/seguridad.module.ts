@@ -31,7 +31,8 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
     CerrarSesionComponent,
     RegistroPublicoUsuariosComponent,
     ValidarHashUsuarioPublicoComponent,
-    ConctactenosComponent
+    ConctactenosComponent,
+    NosotrosComponent
   ],
   imports: [
     CommonModule,
