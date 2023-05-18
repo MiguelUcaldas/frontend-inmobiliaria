@@ -5,6 +5,7 @@ import { usuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 import { MD5 } from 'crypto-js';
 import { Router } from '@angular/router';
+import { ReCaptcha2Component } from 'ngx-captcha';
 
 @Component({
   selector: 'app-indentificacion-usuario',
@@ -15,7 +16,19 @@ import { Router } from '@angular/router';
 export class IndentificacionUsuarioComponent {
 
   fGroup: FormGroup = new FormGroup({});
+  /* protected aFormGroup: FormGroup = new FormGroup({});
+  @ViewChild('captchaElem') captchaElem: ReCaptcha2Component | undefined;
+  @ViewChild('langInput') langInput: ElementRef | undefined;
 
+  public captchaIsLoaded = false;
+  public captchaSuccess = false;
+  public captchaIsExpired = false;
+  public captchaResponse?: string;
+
+  public theme: 'light' | 'dark' = 'light';
+  public size: 'compact' | 'normal' = 'normal';
+  public lang = '	es-419';
+  public type!: 'image' | 'audio'; */
   constructor(
     private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
@@ -31,7 +44,8 @@ export class IndentificacionUsuarioComponent {
   ConstruirFormulario() {
     this.fGroup = this.fb.group({
       usuario: ['', [Validators.required, Validators.email]],
-      clave: ['', [Validators.required,]]
+      clave: ['', [Validators.required,]],
+      recaptcha: [null, [Validators.required,]]
     });
   }
 

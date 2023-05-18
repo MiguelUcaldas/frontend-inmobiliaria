@@ -207,4 +207,11 @@ export class SeguridadService {
     }
     return menu;
   }
+
+  validarRecaptchaBackend(token: string): Observable<any> {
+    return this.http.post<any>(`${this.urlBase}verificar-recaptcha`, {
+      token
+    });
+      
+}
 }

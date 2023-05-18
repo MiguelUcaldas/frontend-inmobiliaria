@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroPublicoUsuariosComponent } from './registro-publico-usuarios/registro-publico-usuarios.component';
 import { ValidarHashUsuarioPublicoComponent } from './validar-hash-usuario-publico/validar-hash-usuario-publico.component';
 import { ConctactenosComponent } from './contactenos/contactenos.component';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 
 
 @NgModule({
@@ -36,7 +37,17 @@ import { ConctactenosComponent } from './contactenos/contactenos.component';
     CommonModule,
     SeguridadRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RecaptchaFormsModule,
+    RecaptchaModule
+  ], 
+  providers: [
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: "6LfTXQ8mAAAAAGbY7A2JxSfsUPx94NVOAz08MhIt"
+      } as RecaptchaSettings
+    }
   ]
 })
 export class SeguridadModule { }
