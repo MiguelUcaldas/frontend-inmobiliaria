@@ -1,5 +1,62 @@
-<h3>LISTA DE INMUEBLES</h3>
+<br />
+<a routerLink ="/parametros/inmueble-crear" class="btn">Agregar Registro</a>
+<br />
 
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio de venta</th>
+      <th>Precio de alquiler</th>
+      <th>Imagen</th>
+      <th>Direccion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of listaRegistros">
+      <td>{{r.nommbre}}</td>
+      <td>{{r.precioVenta}}</td>
+      <td>{{r.precioAlquiler}}</td>
+      <td><img src="{{r.imagen}}" class="imagenListadoRegistros"/></td>
+      <td>{{r.direccion}}</td>
+      <td>
+
+        <a routerLink ="/parametros/inmueble-editar/{{r.id}}" class="btn green">Editar Registro</a>&nbsp;
+        <a routerLink ="/parametros/inmueble-eliminar/{{r.id}}" class="btn red">Eliminar Registro</a>
+        <button>Editar</button>
+        <button>Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h3>LISTA DE INMUEBLES</h3>
 <div class="row">
   <div *ngFor="let r of listaRegistros" class="col s3 ">
     <div  class="card">
@@ -15,4 +72,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

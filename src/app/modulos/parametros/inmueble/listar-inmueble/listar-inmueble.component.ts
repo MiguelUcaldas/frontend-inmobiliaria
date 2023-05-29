@@ -21,6 +21,7 @@ export class ListarInmuebleComponent {
           this.listaRegistros = datos;
         },
         error: (err) => {
+          alert("Error leyendo la informacion.")
 
         }
       })
