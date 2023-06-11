@@ -14,18 +14,29 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let r of listaRegistros">
-      <td>{{r.nommbre}}</td>
+    <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
+      <td>{{r.direccion}}</td>
       <td>{{r.precioVenta}}</td>
-      <td>{{r.precioAlquiler}}</td>
-      <td><img src="{{r.imagen}}" class="imagenListadoRegistros"/></td>
+      <td>{{r.precioRenta}}</td>
+      <td><img src="{{BASE_URL}}ObtenerArchivo/1/{{r.foto}}" class="imagenListadoRegistros"/></td>
       <td>{{r.direccion}}</td>
       <td>
-
-        <a routerLink ="/parametros/inmueble-editar/{{r.id}}" class="btn green">Editar Registro</a>&nbsp;
-        <a routerLink ="/parametros/inmueble-eliminar/{{r.id}}" class="btn red">Eliminar Registro</a>
+        <a routerLink="/parametros/inmueble-editar/{{r._id}}" class="btn green">Editar Registro</a>&nbsp;
+        <a routerLink="/parametros/inmueble-eliminar/{{r._id}}" class="btn red">Eliminar Registro</a>
         <button>Editar</button>
         <button>Eliminar</button>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="5">
+        <pagination-controls
+                    (pageChange)="pag = $event; ListarRegistros()"
+                    previousLabel="Anterior"
+                    nextLabel="Siguiente"
+                    screenReaderPaginationLabel="Navegación"
+                    screenReaderPageLabel="Página"
+                    screenReaderCurrentLabel="Página Actual">
+        </pagination-controls>
       </td>
     </tr>
   </tbody>

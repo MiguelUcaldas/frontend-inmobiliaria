@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InmuebleModel } from 'src/app/modelos/inmueble.model';
-import { ParametrosService } from 'src/app/servicios/parametros/inmueble.service';
+import { InmuebleService } from 'src/app/servicios/parametros/inmueble.service';
 
 @Component({
   selector: 'app-inicio',
@@ -11,7 +11,7 @@ export class InicioComponent {
   listaRegistros: InmuebleModel[] = [];
 
   constructor(
-    private servicio: ParametrosService
+    private servicio: InmuebleService
   ) {
   }
 
