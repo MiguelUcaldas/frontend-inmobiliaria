@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { contactenosUsuarioModel } from 'src/app/modelos/contactenos-usuario.model';
 import { usuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
@@ -26,9 +27,11 @@ export class ConctactenosComponent {
    */
   ConstruirFormulario() {
     this.fGroup = this.fb.group({
-      Nombre: ['', [Validators.required, Validators.minLength(2)]],
+      nombreCompleto: ['', [Validators.required, Validators.minLength(2)]],
+      tipoMensaje: ['', [Validators.required, Validators.minLength(2)]],
       correo: ['', [Validators.required]],
-      asunto:['',[Validators.required, Validators.minLength(2)]]
+      celular: ['', [Validators.required]],
+      mensaje: ['', [Validators.required, Validators.minLength(2)]]
 
     });
   }
@@ -39,13 +42,16 @@ export class ConctactenosComponent {
   EnviarCorreo() {
     let campos = this.ObtenerFormGroup;
     let datos = {
-      nombre: campos["Nombre"].value,
-      correo: campos["Correo"].value,
-      asuntos: campos["Asunto"].value
+      nombreCompleto: campos["nombreCompleto"].value,
+      tipoMensaje: campos["tipoMensaje"].value,
+      correo: campos["correo"].value,
+      celular: campos["celular"].value,
+      mensaje: campos["mensaje"].value    
     }
+    console.log(datos);
     this.servicioSeguridad.EnvioCorreoContactenos(datos).subscribe({
-      next: (respuesta:usuarioModel) => {
-        alert("Envio correcto, pronto estaremos en contacto.")
+      next: (respuesta:contactenosUsuarioModel) => {
+        alert("Envío correcto, pronto estaremos en contacto.")
       },
       error: (err) => {
         alert("No se ha podido enviar el correo.")
