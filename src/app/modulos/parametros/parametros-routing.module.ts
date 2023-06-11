@@ -5,6 +5,9 @@ import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.
 import { CrearInmuebleComponent } from './inmueble/crear-inmueble/crear-inmueble.component';
 import { EliminarInmuebleComponent } from './inmueble/eliminar-inmueble/eliminar-inmueble.component';
 import { EditarInmuebleComponent } from './inmueble/editar-inmueble/editar-inmueble.component';
+import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
+import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cliente.component';
+import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 
 const routes: Routes = [
   {
@@ -26,16 +29,22 @@ const routes: Routes = [
     path:"inmueble-editar/:id",
     component: EditarInmuebleComponent
   },
-
-  {
-    path:"cliente-crear",
-    component: ListarClienteComponent
-  },
-
   {
     path:"cliente-listar",
     component: ListarClienteComponent
   },
+  {
+    path:"cliente-agregar",
+    component: CrearClienteComponent
+  },
+  {
+    path:"cliente-eliminar/:id",
+    component: EliminarClienteComponent
+  },
+  {
+    path:"cliente-editar/:id",
+    component: EditarClienteComponent
+  }
 
 ];
 
