@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { usuarioModel } from '../modelos/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { ConfiguacionRutasBackend } from '../config/configuracion.rutas.backend';
+import { ConfiguracionRutasBackend } from '../config/configuracion.rutas.backend';
 import { UsuarioValidadoModel } from '../modelos/usuario.validado.model';
 import { ConfiguracionMenuLateral } from '../config/configuracion.menu.lateral';
 import { ItemMenuModel } from '../modelos/item.menu.model';
@@ -12,7 +12,7 @@ import { PermisoModel } from '../modelos/permiso.model';
   providedIn: 'root'
 })
 export class SeguridadService {
-  urlBase: string = ConfiguacionRutasBackend.urlSeguridad;
+  urlBase: string = ConfiguracionRutasBackend.urlSeguridad;
   constructor(private http: HttpClient) {
     this.validacionDeSesion();
   }
@@ -212,6 +212,15 @@ export class SeguridadService {
     return this.http.post<any>(`${this.urlBase}verificar-recaptcha`, {
       token
     });
-      
-}
+  }
+
+  ObtenerTokenLocalStorage():string {
+    let ls = localStorage.getItem("datos-sesion");
+    if (ls) {
+      let usuario: UsuarioValidadoModel = JSON.parse(ls);
+      return usuario.token!;
+    } else {
+      return "";
+    }
+  }
 }

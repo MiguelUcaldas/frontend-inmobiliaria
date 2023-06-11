@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InmuebleModel } from 'src/app/modelos/inmueble.model';
-import { ParametrosService } from 'src/app/servicios/parametros.service';
+import { ParametrosService } from 'src/app/servicios/parametros/inmueble.service';
 
 @Component({
   selector: 'app-listar-inmueble',
@@ -11,12 +11,12 @@ export class ListarInmuebleComponent {
     listaRegistros: InmuebleModel[] = [];
 
     constructor(
-      private servicioParametrizacion: ParametrosService
+      private servicioInmueble: ParametrosService
     ) {
     }
 
     ngOnInit() {
-      this.servicioParametrizacion.listarRegistros().subscribe({
+      this.servicioInmueble.listarRegistros().subscribe({
         next: (datos) => {
           this.listaRegistros = datos;
         },
