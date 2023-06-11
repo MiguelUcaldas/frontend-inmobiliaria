@@ -9,6 +9,7 @@ import { RutaNoEncontradaComponent } from './publico/manejo-errores/ruta-no-enco
 import { ErrorDeServidorComponent } from './publico/manejo-errores/error-de-servidor/error-de-servidor.component';
 import { InicioComponent } from './publico/inicio/inicio.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
