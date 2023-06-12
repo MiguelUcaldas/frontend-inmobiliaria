@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { contactenosUsuarioModel } from 'src/app/modelos/contactenos-usuario.model';
 import { usuarioModel } from 'src/app/modelos/usuario.model';
-import { SeguridadService } from 'src/app/servicios/seguridad.service';
+import { LogicaNegocioService } from 'src/app/servicios/logica-negocio.service';
+declare const M: any;
 
 @Component({
   selector: 'app-conctactenos',
@@ -14,11 +15,19 @@ export class ConctactenosComponent {
 
   constructor(
     private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService
+    private servicioLogicaNegocio: LogicaNegocioService
   ) {
   }
 
   ngOnInit() {
+    this.ConstruirFormulario();
+    const materializeScript = document.createElement('script');
+    materializeScript.src =
+      'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js';
+    materializeScript.onload = () => {
+      M.AutoInit();
+    };
+    document.body.appendChild(materializeScript);
     this.ConstruirFormulario();
   }
 
@@ -27,11 +36,11 @@ export class ConctactenosComponent {
    */
   ConstruirFormulario() {
     this.fGroup = this.fb.group({
-      nombreCompleto: ['', [Validators.required, Validators.minLength(2)]],
-      tipoMensaje: ['', [Validators.required, Validators.minLength(2)]],
+      nombreCompleto: ['', [Validators.required]],
+      tipoMensaje: ['', [Validators.required]],
       correo: ['', [Validators.required]],
       celular: ['', [Validators.required]],
-      mensaje: ['', [Validators.required, Validators.minLength(2)]]
+      mensaje: ['', [Validators.required]]
 
     });
   }
@@ -49,8 +58,8 @@ export class ConctactenosComponent {
       mensaje: campos["mensaje"].value    
     }
     console.log(datos);
-    this.servicioSeguridad.EnvioCorreoContactenos(datos).subscribe({
-      next: (respuesta:contactenosUsuarioModel) => {
+    this.servicioLogicaNegocio.EnvioCorreoContactenos(datos).subscribe({
+      next: (respuesta:boolean) => {
         alert("Envío correcto, pronto estaremos en contacto.")
       },
       error: (err) => {

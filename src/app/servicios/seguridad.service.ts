@@ -7,6 +7,7 @@ import { UsuarioValidadoModel } from '../modelos/usuario.validado.model';
 import { ConfiguracionMenuLateral } from '../config/configuracion.menu.lateral';
 import { ItemMenuModel } from '../modelos/item.menu.model';
 import { PermisoModel } from '../modelos/permiso.model';
+import { contactenosUsuarioModel } from '../modelos/contactenos-usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -143,12 +144,6 @@ export class SeguridadService {
   ValidarHashUsuarioPublico(hash: string): Observable<boolean> {
     return this.http.post<boolean>(`${this.urlBase}validar-hash-usuario`, {
       hash: hash
-    });
-  }
-
-  EnvioCorreoContactenos(datos: any): Observable<usuarioModel> {
-    return this.http.post<usuarioModel>(`${this.urlBase}contactenos`, {
-      datos
     });
   }
 
