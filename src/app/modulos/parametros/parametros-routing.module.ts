@@ -34,7 +34,7 @@ const routes: Routes = [
     component: ListarClienteComponent
   },
   {
-    path:"cliente-agregar",
+    path:"cliente-crear",
     component: CrearClienteComponent
   },
   {

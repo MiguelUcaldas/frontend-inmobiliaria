@@ -103,5 +103,4 @@ export class CrearInmuebleComponent {
       this.obtenerFgArchivo["archivo"].setValue(f);
     }
   }
-
 }

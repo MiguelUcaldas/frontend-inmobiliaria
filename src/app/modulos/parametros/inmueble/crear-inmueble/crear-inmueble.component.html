@@ -1,16 +1,16 @@
-<fieldset class="center container">
+<fieldset class="center container" style="font-family: Comic Sans MS;">
   <legend>Creación de Inmuebles</legend>
   <div class="row">
       <form class="col s12" [formGroup]="cargaArchivoFG">
           <div class="row">
               <div class="showImage center-align">
-                  <img *ngIf="!archivoCargado" src="/assets/img/default.png" class="imagenInmueble" />
+                  <img *ngIf="!archivoCargado" src="../../../../../assets/default.png" class="imagenInmueble" />
                   <img *ngIf="archivoCargado" src="{{BASE_URL}}ObtenerArchivo/1/{{nombreArchivoCargado}}" class="imagenInmueble" />
               </div>
           </div>
           <div class="file-field input-field row">
-              <div class="btn col s3">
-                  <span>Seleccionar Archivo</span>
+              <div class="btn col s3 black">
+                  <span style="font-family: Comic Sans MS;" >Seleccionar Archivo</span>
                   <input (change)="CuandoSeleccionaArchivo($event)" name="image" type="file">
               </div>
               <div class="file-path-wrapper col s9">
@@ -19,7 +19,7 @@
           </div>
           <div class="row">
               <div class="col s12">
-                  <input type="button" class="btn" value="Subir Archivo" (click)="CargarArchivo()" />
+                  <input type="button" style="font-family: Comic Sans MS;" class="btn black" value="Subir Archivo" (click)="CargarArchivo()" />
               </div>
           </div>
       </form>
@@ -29,7 +29,7 @@
       <div class="row">
         <div class="input-field col s4">
           <input formControlName="nombre" class="validate" id="nombre" type="text">
-          <label for="nombre" data-error="wrong" data-success="right">Nombre</label>
+          <label for="nombre" data-error="wrong" data-success="right" style="font-family: Comic Sans MS;">Nombre</label>
           <div class="show-errors" *ngIf="obtenerFgDatos['nombre'].errors
           && (obtenerFgDatos['nombre'].dirty || obtenerFgDatos['nombre'].touched)">
           <strong>Este campo es obligatorio</strong>
@@ -37,7 +37,7 @@
         </div>
         <div class="input-field col s4">
           <input formControlName="precioVenta" id="precioVenta" type="number">
-          <label for="precioVenta">Precio de Venta</label>
+          <label for="precioVenta" style="font-family: Comic Sans MS;">Precio de Venta</label>
           <div class="show-errors" *ngIf="obtenerFgDatos['precioVenta'].errors
           && (obtenerFgDatos['precioVenta'].dirty || obtenerFgDatos['precioVenta'].touched)">
           <strong>Este campo es obligatorio</strong>
@@ -45,7 +45,7 @@
         </div>
         <div class="input-field col s4">
           <input formControlName="precioAlquiler" id="precioAlquiler" type="number">
-          <label for="precioAlquiler">Precio de Alquiler</label>
+          <label for="precioAlquiler" style="font-family: Comic Sans MS;">Precio de Alquiler</label>
           <div class="show-errors" *ngIf="obtenerFgDatos['precioAlquiler'].errors
           && (obtenerFgDatos['precioAlquiler'].dirty || obtenerFgDatos['precioAlquiler'].touched)">
           <strong>Este campo es obligatorio</strong>
@@ -54,8 +54,8 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <a routerLink="/parametros/inmueble-listar" class="btn red">Cancelar</a>&nbsp;
-          <button (click)="GuardarRegistro()" class="btn waves-effect waves-light">Guardar</button>
+          <a routerLink="/parametros/inmueble-listar" class="btn red" style="font-family: Comic Sans MS;">Cancelar</a>&nbsp;
+          <button (click)="GuardarRegistro()" class="btn green" style="font-family: Comic Sans MS;">Guardar</button>
         </div>
       </div>
     </form>

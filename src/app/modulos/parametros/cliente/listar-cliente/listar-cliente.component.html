@@ -1,10 +1,10 @@
 <br />
-<a routerLink="/parametros/cliente-agregar" class="btn">Agregar Registro</a>
+<a routerLink="/parametros/cliente-agregar" class="btn black" style="font-family: Comic Sans MS;">Agregar Registro</a>
 <br />
 
 <table>
     <thead>
-      <tr>
+      <tr style="font-family: Comic Sans MS;">
           <th>Nombre</th>
           <th>Correo</th>
           <th>Celular</th>
@@ -19,12 +19,12 @@
         <td>{{r.celular}}</td>
         <td>{{r.direccion}}</td>
         <td>
-            <a routerLink="/parametros/cliente-editar/{{r.id}}" class="btn orange">Editar Registro</a>&nbsp;
+            <a routerLink="/parametros/cliente-editar/{{r.id}}" class="btn blue">Editar Registro</a>&nbsp;
             <a routerLink="/parametros/cliente-eliminar/{{r.id}}" class="btn red">Eliminar Registro</a>
         </td>
       </tr>
       <tr>
-        <td colspan="5">
+        <td colspan="5" style="font-family: Comic Sans MS;" >
           <pagination-controls
                       (pageChange)="pag = $event; ListarRegistros()"
                       previousLabel="Anterior"
