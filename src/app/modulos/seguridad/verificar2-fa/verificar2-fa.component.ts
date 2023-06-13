@@ -46,7 +46,10 @@ export class Verificar2FAComponent {
         next: (datos: UsuarioValidadoModel) => {
           console.log(datos);
           if (datos.token != null && datos.token != undefined && datos.token != "") {
-            console.log("ESTOY CREANDO EL MENU");
+            if(this.usuarioId == '64629fbc54e1363d70f9f458'){
+              alert("Bienvenido al sistema Santiago")}
+              if(this.usuarioId == '642653fe9bc5ec12287063a4'){
+                alert("Bienvenido al sistema Juan Pablo")}
             this.servicioSeguridad.ConstruirMenuLateral(datos.menu);
             this.servicioSeguridad.AlmacenarDatosUsuarioValidado(datos);
             this.router.navigate([""]);

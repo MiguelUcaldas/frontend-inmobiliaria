@@ -1,0 +1,55 @@
+<div class="contact-page" id="nombre">
+  <form [formGroup]="fGroup" class="col s12">
+    <div class="row">
+      <h4 class="center-align" style="font-family: Comic Sans MS;">Solicitud Compra-Alquiler</h4>
+    </div>
+    <div class="col s4" style="font-family: Comic Sans MS;">
+      Ciudad:
+      <span *ngIf="ciudadId === 1">Manizales</span>
+      <span *ngIf="ciudadId === 2">Pereira</span>
+      <span *ngIf="ciudadId === 3">Armenia</span>
+      <span *ngIf="ciudadId === 4">Medellin</span>
+
+    </div>
+    <div class="col s4" style="font-family: Comic Sans MS;">
+      Tipo de Solicitud:
+    </div>
+    <select name="Tipo de Solicitud" id="tipo" style="font-family: Comic Sans MS;">
+      <option value="vacio"></option>
+      <option value="Compra">{{venta}}</option>
+      <option value="Alquiler">{{renta}}</option>
+    </select>
+    <div class="col s4" style="font-family: Comic Sans MS;">
+      Asesor:
+      <span *ngIf="asesorId === 1">Juan Pablo Valencia</span>
+      <span *ngIf="asesorId === 2">Santiago Roncancio</span>
+
+
+    </div>
+    <div class="input-field col s8" id="correo">
+      <input formControlName="correo" id="email" type="email" class="validate" />
+      <label for="email">Correo</label>
+    </div>
+    <div class="input-field col s4" id="celular">
+      <input formControlName="celular" id="celular" type="text" class="validate" />
+      <label for="celular">Celular</label>
+    </div>
+<div class="row">
+  <div class="input-field col s12" id="ReCaptcha">
+    <re-captcha formControlName="recaptcha">
+    </re-captcha>
+  </div>
+</div>
+<div class="col" id="boton">
+  <div class="col s12">
+    <button class="btn waves-effect waves-light" type="button" (click)="EnviarCorreo()">Solicitar
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+  <div class="col s12 right-align" id="boton">
+    <button class="btn red" type="button" routerLink="/inicio">Cancelar
+    </button>
+  </div>
+</div>
+</form>
+</div>

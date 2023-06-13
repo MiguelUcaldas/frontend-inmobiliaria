@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InmuebleModel } from 'src/app/modelos/inmueble.model';
 import { LogicaNegocioService } from 'src/app/servicios/logica-negocio.service';
+import { InmuebleService } from 'src/app/servicios/parametros/inmueble.service';
 declare const M: any;
 
 @Component({
@@ -11,11 +13,21 @@ declare const M: any;
 })
 export class SolicitudComponent {
   fGroup: FormGroup = new FormGroup({});
+  recordId: number = 0;
+  direccion: string = "";
+  precioVenta: number = 0;
+  precioRenta: number = 0;
+  ciudadId: number = 0;
+  asesorId: number = 0;
+  foto: string = "";
+  venta : boolean=false;
+  renta : boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private servicioLogicaNegocio: LogicaNegocioService,
-    private router : Router
+    private router : Router,
+    private servicio: InmuebleService,
   ) {
   }
   ngOnInit() {
@@ -28,6 +40,28 @@ export class SolicitudComponent {
     };
     document.body.appendChild(materializeScript);
     this.ConstruirFormulario();
+  }
+
+  BuscarRegistro() {
+    this.servicio.BuscarRegistro(this.recordId).subscribe({
+
+      next: (datos: InmuebleModel) => {
+        console.log(datos);
+        this.recordId = datos.id!;
+        this.ciudadId = datos.ciudadId!;
+        this.asesorId = datos.asesorId!;
+        this.direccion = datos.direccion!;
+        this.precioVenta = datos.precioVenta!;
+        this.precioRenta = datos.precioRenta!;
+        this.foto = datos.foto!;
+        this.venta = datos.venta!;
+        this.renta = datos.renta!;
+
+      },
+      error: (err) => {
+        alert("El registro no existe.")
+      }
+    })
   }
 
   /**

@@ -15,9 +15,14 @@ export class VerInmueblerComponent {
   ciudadId: number = 0;
   direccion: string = "";
   asesorId:number=0;
+  tipoPropiedadId:number=0;
   precioVenta: number = 0;
   precioRenta: number = 0;
   foto: string = "";
+  venta : boolean = false;
+  renta : boolean = false;
+
+  selectedOption: string = "";
 
   constructor(
     private servicio: InmuebleService,
@@ -43,6 +48,9 @@ export class VerInmueblerComponent {
         this.precioVenta = datos.precioVenta!;
         this.precioRenta = datos.precioRenta!;
         this.foto = datos.foto!;
+        this.venta = datos.venta!;
+        this.renta = datos.renta!;
+        this.tipoPropiedadId = datos.tipoPropiedadId!;
 
 
       },

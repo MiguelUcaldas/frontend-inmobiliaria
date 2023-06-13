@@ -15,7 +15,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
 import { VerInmueblerComponent } from './inmueble/ver-inmueble/ver-inmueble.component';
-import { SolicitudComponent } from './solicitud/solicitud/solicitud.component';
+import { SolicitudComponent } from './inmueble/solicitud/solicitud.component';
 
 
 @NgModule({

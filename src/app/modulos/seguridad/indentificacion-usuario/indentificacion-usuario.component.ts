@@ -61,15 +61,17 @@ export class IndentificacionUsuarioComponent {
           if(datos._id == undefined || datos._id == null){
             alert("Credenciales incorrectas o falta la validación del correo electrónico");
           } else {
-            console.log(datos.rolId)
-            if(datos.rolId == "64572a559f3c7b8f32cea0e9"){
-              console.log("SOY CLIENTE")
-            }else{
-              console.log("ADMIN")
-            }
-
             if (this.servicioSeguridad.AlmacenarDatosUsuarioIdentificado(datos)) {
             this.router.navigate(["/seguridad/verificar2-fa"]);
+            if(datos.rolId == "64572a559f3c7b8f32cea0e9"){
+              alert("ESTAS ENTRANDO AL SISTEMA COMO CLIENTE");
+            }
+            if(datos.rolId == "6420c4fa36e9b908405a0665"){
+              alert("ESTAS ENTRANDO AL SISTEMA COMO ADMINISTRADOR");
+            }
+            if(datos.rolId == "6487f89b55f70e4c54925f6c"){
+              alert("ESTAS ENTRANDO AL SISTEMA COMO ASESOR");
+            }
             }
           }
         },

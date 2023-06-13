@@ -10,7 +10,7 @@ import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cl
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
 import { VerInmueblerComponent } from './inmueble/ver-inmueble/ver-inmueble.component';
-import { SolicitudComponent } from './solicitud/solicitud/solicitud.component';
+import { SolicitudComponent } from './inmueble/solicitud/solicitud.component';
 
 const routes: Routes = [
   {
@@ -65,7 +65,7 @@ const routes: Routes = [
     component: VerInmueblerComponent
   },
   {
-    path:"solicitud",
+    path:"solicitud/:id",
     component: SolicitudComponent
   }
 

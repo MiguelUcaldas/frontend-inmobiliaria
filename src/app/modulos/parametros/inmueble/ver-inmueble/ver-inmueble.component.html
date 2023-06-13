@@ -9,41 +9,65 @@
   <div class="row">
   </div>
   <div class="row">
-    <div class="row">
-      <div class="showImage center-align">
-        <img src="{{BASE_URL}}ObtenerArchivo/1/{{foto}}" class="imagenInmueble" />
-      </div>
-    </div>
-    <div class="row" style="font-family: Comic Sans MS;">
-      <div class="col s4">
-        Ciudad:
-        <span *ngIf="ciudadId === 1">Manizales</span>
-        <span *ngIf="ciudadId === 2">Pereira</span>
-        <span *ngIf="ciudadId === 3">Armenia</span>
-        <span *ngIf="ciudadId === 4">Medellin</span>
+    <td style="font-family: Comic Sans MS;">
+      <ng-container [ngSwitch]="tipoPropiedadId">
+        <span *ngSwitchCase="1"><img src="../../../../../assets/apar1.jpg" id="foto"></span>
+        <span *ngSwitchCase="2"><img src="../../../../../assets/casa1.jpg" id="foto"></span>
+        <span *ngSwitchCase="3"><img src="../../../../../assets/finca11.jpg" id="foto"></span>
+        <span *ngSwitchDefault></span>
+      </ng-container>
+    </td>
+  </div>
+  <div class="row" style="font-family: Comic Sans MS;">
+    <div class="col s4">
+      Ciudad:
+      <span *ngIf="ciudadId === 1">Manizales</span>
+      <span *ngIf="ciudadId === 2">Pereira</span>
+      <span *ngIf="ciudadId === 3">Armenia</span>
+      <span *ngIf="ciudadId === 4">Medellin</span>
 
-      </div>
-      <div class="col s4">
-        Direccion: {{direccion}}
-      </div>
-      <div class="col s4">
-        Asesor :
-        <span *ngIf="asesorId === 1">Juan Pablo Valencia</span>
-        <span *ngIf="asesorId === 2">Santiago Roncancio</span>
-      </div>
-      <div class="col s4">
-
-        Precio de Venta : ${{precioVenta | number:'1.0-0'}}
-      </div>
-      <div class="col s4">
-        Precio de Renta : ${{precioRenta | number:'1.0-0'}}
-      </div>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <a routerLink="/parametros/inmueble-listar" class="btn red" style="font-family: Comic Sans MS;">Cancelar</a>&nbsp;
-        <button routerLink="/parametros/solicitud" class="btn green" style="font-family: Comic Sans MS;">Solicitar</button>
-      </div>
+    <div class="col s4">
+      Direccion: {{direccion}}
+    </div>
+    <div class="col s4">
+      Asesor :
+      <span *ngIf="asesorId === 1">Juan Pablo Valencia</span>
+      <span *ngIf="asesorId === 2">Santiago Roncancio</span>
+    </div>
+    <div class="col s4">
+
+      Precio de Venta : ${{precioVenta | number:'1.0-0'}}
+    </div>
+    <div class="col s4">
+      Precio de Renta : ${{precioRenta | number:'1.0-0'}}
+    </div>
+
+    <div class="col s4">
+
+    </div>
+    <div class="col s4">
+      Para Venta :
+      <span *ngIf="venta">Disponible</span>
+      <span *ngIf="!venta">Ocupado</span>
+    </div>
+    <div class="col s4">
+      Para Alquiler :
+      <span *ngIf="renta">Disponible</span>
+      <span *ngIf="!renta">Ocupado</span>
+
+
     </div>
   </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <a routerLink="/parametros/inmueble-listar" class="btn red" style="font-family: Comic Sans MS;">Cancelar</a>&nbsp;
+      <button routerLink="/parametros/solicitud/{{recordId}}" class="btn" [class.disabled]="!venta && !renta"
+        [disabled]="!venta && !renta" style="font-family: Comic Sans MS; background-color: green;">Solicitar</button>
+
+      <!-- <button routerLink="/parametros/solicitud/{{recordId}}" class="btn green" style="font-family: Comic Sans MS;">Solicitar</button>
+      -->
+    </div>
+  </div>
+
 </fieldset>
