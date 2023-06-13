@@ -83,6 +83,7 @@ const routes: Routes = [
       component:EliminarUsuarioComponent,
       canActivate:[ValidarSesionActivaGuard]
     }
+
 ];
 
 @NgModule({

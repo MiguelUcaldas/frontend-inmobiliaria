@@ -13,6 +13,9 @@ import { EditarInmuebleComponent } from './inmueble/editar-inmueble/editar-inmue
 import { EliminarInmuebleComponent } from './inmueble/eliminar-inmueble/eliminar-inmueble.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
+import { VerInmueblerComponent } from './inmueble/ver-inmueble/ver-inmueble.component';
+import { SolicitudComponent } from './solicitud/solicitud/solicitud.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListarInmuebleComponent,
     CrearInmuebleComponent,
     EditarInmuebleComponent,
-    EliminarInmuebleComponent
+    EliminarInmuebleComponent,
+    ListarAsesorComponent,
+    VerInmueblerComponent,
+    SolicitudComponent
   ],
   imports: [
     CommonModule,

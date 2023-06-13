@@ -19,8 +19,8 @@ export namespace ConfiguracionMenuLateral {
             texto:"Productos"
         },
         {
-            id: "64852e88752f222e3e6ea338",
-            ruta: "/parametros/cliente-listar",
+            id: "64572a559f3c7b8f32cea0e9",
+            ruta: "/parametros/inmueble-listar",
             icono:"<i class='material-icons'>cloud</i>",
             texto:"Clientes"
         }

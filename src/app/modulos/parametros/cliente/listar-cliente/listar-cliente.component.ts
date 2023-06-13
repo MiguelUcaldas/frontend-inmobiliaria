@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ConfiguracionPaginacion } from 'src/app/config/configuracion.paginacion';
 import { ClienteModel } from 'src/app/modelos/cliente.model';
-import { PaginadorClienteModel } from 'src/app/modelos/paginador.cliente.model';
 import { ClienteService } from 'src/app/servicios/parametros/cliente.service';
 
 @Component({

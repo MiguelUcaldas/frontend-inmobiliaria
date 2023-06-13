@@ -9,7 +9,7 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
 })
 export class EncabezadoComponent {
   constructor(
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
   ) { }
   sesionActiva: boolean = false;
 

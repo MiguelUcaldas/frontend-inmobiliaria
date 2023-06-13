@@ -20,6 +20,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     RutaNoEncontradaComponent,
     ErrorDeServidorComponent,
     InicioComponent,
+
   ],
   imports: [
     BrowserModule,

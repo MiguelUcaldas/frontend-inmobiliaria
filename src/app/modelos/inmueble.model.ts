@@ -9,5 +9,6 @@ export class InmuebleModel{
   video?:string;
   foto?:string
   tipoPropiedadId?:number;
-  ciudadId?:string;
+  ciudadId?:number;
+  asesorId?:number;
 }

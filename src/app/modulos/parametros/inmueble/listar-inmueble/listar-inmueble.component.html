@@ -2,7 +2,7 @@
 <a routerLink ="/parametros/inmueble-crear" class="btn black" style="font-family: Comic Sans MS;">Agregar Registro</a>
 <br />
 <div class="row">
-  <h4 class="center-align">Listado Propiedades</h4>
+  <h4 class="center-align" style="font-family: Comic Sans MS;" >Listado Propiedades</h4>
 </div>
 
 <table>
@@ -14,12 +14,12 @@
       <th>Direccion</th>
       <th>Precio de venta</th>
       <th>Precio de alquiler</th>
-      <th>Estado</th>
+      <th>Venta</th>
+      <th>Alquiler</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
-      <!--<td>{{r.tipoPropiedadId}}</td> -->
 <td style="font-family: Comic Sans MS;">
   <ng-container [ngSwitch]="r.tipoPropiedadId">
     <span *ngSwitchCase="1" ><img src="../../../../../assets/apart.jpg" id="foto"></span>
@@ -45,28 +45,27 @@
     </ng-container>
 
 <td style="font-family: Comic Sans MS;">{{r.direccion}}</td>
-<td style="font-family: Comic Sans MS;">{{r.precioVenta}}</td>
-<td style="font-family: Comic Sans MS;">{{r.precioRenta}}</td>
+<td style="font-family: Comic Sans MS;">${{r.precioVenta | number:'1.0-0'}}</td>
+<td style="font-family: Comic Sans MS;">${{r.precioRenta | number:'1.0-0'}}</td>
 
-<!--<td><img src="../../../../../assets/casa.jpg" class="imagenListadoRegistros" /></td>
-
-<td>{{r.direccion}}</td>
- <td>{{r.renta}}</td>
-      <td>{{r.venta}}</td>-->
 <td>
-  <span *ngIf="r.renta" style="font-family: Comic Sans MS;">EN RENTA</span>
+  <span *ngIf="r.renta" style="font-family: Comic Sans MS;">Disponible</span>
   <span *ngIf="!r.renta" style="font-family: Comic Sans MS;"></span>
 </td>
 <td>
-  <span *ngIf="r.venta" style="font-family: Comic Sans MS;">EN VENTA</span>
+  <span *ngIf="r.venta" style="font-family: Comic Sans MS;">Disponible</span>
   <span *ngIf="!r.venta" style="font-family: Comic Sans MS;"></span>
 </td>
 
 <td>
-  <a routerLink="/parametros/inmueble-editar/{{r.id}}" class="btn green">Editar Registro</a>
+  <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-editar/{{r.id}}" class="btn green" style="font-family: Comic Sans MS;">Editar Registro</a>
 </td>
 <td>
-  <a routerLink="/parametros/inmueble-eliminar/{{r.id}}" class="btn red">Eliminar Registro</a>
+  <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-eliminar/{{r.id}}" class="btn red" style="font-family: Comic Sans MS;">Eliminar Registro</a>
+</td>
+
+<td>
+  <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-ver/{{r.id}}" class="btn grey" style="font-family: Comic Sans MS;">Ver</a>
 </td>
 
 </tr>
