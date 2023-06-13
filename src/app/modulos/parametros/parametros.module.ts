@@ -6,7 +6,6 @@ import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cl
 import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
 import { ListarClienteComponent } from './cliente/listar-cliente/listar-cliente.component';
-
 import { ListarInmuebleComponent } from './inmueble/listar-inmueble/listar-inmueble.component';
 import { CrearInmuebleComponent } from './inmueble/crear-inmueble/crear-inmueble.component';
 import { EditarInmuebleComponent } from './inmueble/editar-inmueble/editar-inmueble.component';

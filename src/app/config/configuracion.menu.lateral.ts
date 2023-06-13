@@ -1,28 +1,28 @@
 export namespace ConfiguracionMenuLateral {
     export const listaMenus = [
         {
-            id: "640cecc7a49bf262bc70a808",
+            id: "6420c65e36e9b908405a0668",
             ruta: "/seguridad/usuario-listar",
             icono:"<i class='material-icons'>cloud</i>",
             texto:"Usuarios"
         },
         {
-            id: "640cef85a49bf262bc70a809",
-            ruta: "/seguridad/rol-listar",
-            icono:"<i class='material-icons'>cloud</i>",
-            texto:"Roles"
-        },
-        {
-            id: "640cef98a49bf262bc70a80a",
-            ruta: "/parametros/producto-listar",
-            icono:"<i class='material-icons'>cloud</i>",
-            texto:"Productos"
-        },
-        {
-            id: "64572a559f3c7b8f32cea0e9",
-            ruta: "/parametros/inmueble-listar",
+            id: "64852e88752f222e3e6ea338",
+            ruta: "/parametros/cliente-listar",
             icono:"<i class='material-icons'>cloud</i>",
             texto:"Clientes"
-        }
+        },
+        {
+            id: "6420c6c836e9b908405a066a",
+            ruta: "/parametros/inmueble-listar",
+            icono:"<i class='material-icons'>cloud</i>",
+            texto:"Propiedades"
+        },
+        {
+          id: "6420c6a936e9b908405a0669",
+          ruta: "/parametros/asesor-listar",
+          icono:"<i class='material-icons'>cloud</i>",
+          texto:"Asesores"
+      },
     ];
 }
