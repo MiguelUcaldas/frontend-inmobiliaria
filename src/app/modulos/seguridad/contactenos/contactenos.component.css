@@ -33,6 +33,7 @@ textarea#Descripcion {
   font-family: 'Comic Sans MS';
   background-color: black;
   color: aliceblue;
+  margin-bottom: 20px;
 }
 
 #nombre {
