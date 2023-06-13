@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { InmuebleModel } from 'src/app/modelos/inmueble.model';
 import { LogicaNegocioService } from 'src/app/servicios/logica-negocio.service';
 import { InmuebleService } from 'src/app/servicios/parametros/inmueble.service';
+import { Location } from '@angular/common';
 declare const M: any;
 
 @Component({
@@ -28,6 +29,7 @@ export class SolicitudComponent {
     private servicioLogicaNegocio: LogicaNegocioService,
     private router : Router,
     private servicio: InmuebleService,
+    private location: Location
   ) {
   }
   ngOnInit() {
@@ -105,4 +107,9 @@ export class SolicitudComponent {
   get ObtenerFormGroup(){
     return this.fGroup.controls;
   }
+
+  goBack() {
+    this.location.back();
+  }
+
 }

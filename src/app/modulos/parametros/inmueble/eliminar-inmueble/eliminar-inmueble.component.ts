@@ -5,6 +5,7 @@ import { ConfiguracionRutasBackend } from 'src/app/config/configuracion.rutas.ba
 import { ArchivoModel } from 'src/app/modelos/archivo.model';
 import { InmuebleModel } from 'src/app/modelos/inmueble.model';
 import { InmuebleService } from 'src/app/servicios/parametros/inmueble.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-eliminar-inmueble',
@@ -23,7 +24,8 @@ export class EliminarInmuebleComponent {
   constructor(
     private servicio: InmuebleService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {
     this.recordId = this.route.snapshot.params["id"];
   }
@@ -60,5 +62,9 @@ export class EliminarInmuebleComponent {
         alert("Ha ocurrido un error");
       }
     })
+  }
+
+  goBack() {
+    this.location.back();
   }
 }
