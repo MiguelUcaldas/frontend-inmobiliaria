@@ -166,7 +166,7 @@ export class SeguridadService {
 
   ConstruirMenuLateral(permisos: PermisoModel[]) {
     let menu: ItemMenuModel[] = [];
-
+    console.log(permisos);
     permisos.forEach((permiso) => {
       let datosRuta = ConfiguracionMenuLateral.listaMenus.filter(x => x.id == permiso.menuId);
       if (datosRuta.length > 0) {

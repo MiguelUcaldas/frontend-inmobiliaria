@@ -12,7 +12,7 @@ import { ArchivoModel } from 'src/app/modelos/archivo.model';
 })
 export class InmuebleService {
 
-  urlBase: string = ConfiguracionRutasBackend.urlProperties;
+  urlBase: string = ConfiguracionRutasBackend.urlNegocio;
   constructor(private http: HttpClient) { }
   /**
    * Listado de inmuebles

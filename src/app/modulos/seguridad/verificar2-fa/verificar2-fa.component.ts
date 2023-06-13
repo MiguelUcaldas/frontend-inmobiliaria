@@ -46,6 +46,7 @@ export class Verificar2FAComponent {
         next: (datos: UsuarioValidadoModel) => {
           console.log(datos);
           if (datos.token != null && datos.token != undefined && datos.token != "") {
+            console.log("ESTOY CREANDO EL MENU");
             this.servicioSeguridad.ConstruirMenuLateral(datos.menu);
             this.servicioSeguridad.AlmacenarDatosUsuarioValidado(datos);
             this.router.navigate([""]);

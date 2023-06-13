@@ -33,7 +33,6 @@ export class ListarInmuebleComponent {
         },
         error: (err) => {
           alert("Error leyendo la informacion.")
-
         }
       })
     }

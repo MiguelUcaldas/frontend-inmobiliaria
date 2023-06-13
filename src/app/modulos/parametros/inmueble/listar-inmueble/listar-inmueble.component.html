@@ -11,6 +11,7 @@
       <th>Precio de alquiler</th>
       <th>Imagen</th>
       <th>Direccion</th>
+      <th>Estado</th>
     </tr>
   </thead>
   <tbody>
@@ -20,11 +21,12 @@
       <td>{{r.precioRenta}}</td>
       <td><img src="{{BASE_URL}}ObtenerArchivo/1/{{r.foto}}" class="imagenListadoRegistros"/></td>
       <td>{{r.direccion}}</td>
+      <td>{{r.renta}}</td>
+      <td>{{r.venta}}</td>
       <td>
         <a routerLink="/parametros/inmueble-editar/{{r._id}}" class="btn green">Editar Registro</a>&nbsp;
         <a routerLink="/parametros/inmueble-eliminar/{{r._id}}" class="btn red">Eliminar Registro</a>
-        <button>Editar</button>
-        <button>Eliminar</button>
+
       </td>
     </tr>
     <tr>
@@ -41,46 +43,3 @@
     </tr>
   </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <h3>LISTA DE INMUEBLES</h3>
-<div class="row">
-  <div *ngFor="let r of listaRegistros" class="col s3 ">
-    <div  class="card">
-      <div class="card-image">
-        <img src="{{r.foto}}">
-        <span class="card-title">{{r._id}}</span>
-      </div>
-      <div class="card-content">
-        <p>La descripcion es : {{r.descripcion}}. Direccion de la propiedad:{{r.direccion}}</p>
-      </div>
-      <div class="card-action">
-        <a routerLink="/detalles-inmuebles/{{r._id}}">This is a link</a>
-      </div>
-    </div>
-  </div>
-</div> -->
