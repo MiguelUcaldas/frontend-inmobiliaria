@@ -1,12 +1,8 @@
-
-<br />
-<a routerLink ="/parametros/inmueble-crear" class="btn black" style="font-family: Comic Sans MS;">Agregar Registro</a>
-<br />
-<div class="row">
+<div class="row" id="table">
   <h4 class="center-align" style="font-family: Comic Sans MS;" >Listado Propiedades</h4>
 </div>
 
-<table>
+<table style="background-color: white; color: black; border:white;">
   <thead>
     <tr style="font-family: Comic Sans MS;">
       <th>Foto</th>
@@ -58,12 +54,6 @@
   <span *ngIf="!r.venta" style="font-family: Comic Sans MS;"></span>
 </td>
 
-<td>
-  <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-editar/{{r.id}}" class="btn green" style="font-family: Comic Sans MS;">Editar Registro</a>
-</td>
-<td>
-  <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-eliminar/{{r.id}}" class="btn red" style="font-family: Comic Sans MS;">Eliminar Registro</a>
-</td>
 
 <td>
   <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-ver/{{r.id}}" class="btn blue" style="font-family: Comic Sans MS;">Ver</a>

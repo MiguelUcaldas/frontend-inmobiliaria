@@ -14,6 +14,7 @@ import { SolicitudComponent } from './inmueble/solicitud/solicitud.component';
 import { VentaInmuebleComponent } from './inmueble/venta-inmueble/venta-inmueble.component';
 import { RentaInmuebleComponent } from './inmueble/renta-inmueble/renta-inmueble.component';
 import { VerInmuebleRentaComponent } from './inmueble/ver-inmueble-renta/ver-inmueble-renta.component';
+import { VerInmuebleVentaComponent } from './inmueble/ver-inmueble-venta/ver-inmueble-venta.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path:"inmueble-ver/:id",
     component: VerInmueblerComponent
+  },
+  {
+    path:"inmueble-venta-ver/:id",
+    component: VerInmuebleVentaComponent
   },
   {
     path:"inmueble-renta-ver/:id",
