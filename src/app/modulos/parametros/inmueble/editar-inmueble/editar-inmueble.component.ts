@@ -5,6 +5,7 @@ import { ConfiguracionRutasBackend } from 'src/app/config/configuracion.rutas.ba
 import { ArchivoModel } from 'src/app/modelos/archivo.model';
 import { InmuebleModel } from 'src/app/modelos/inmueble.model';
 import { InmuebleService } from 'src/app/servicios/parametros/inmueble.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-editar-inmueble',
@@ -25,7 +26,8 @@ export class EditarInmuebleComponent {
     private fb : FormBuilder,
     private servicio: InmuebleService,
     private router: Router,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private location: Location
   ) {
 this.recordId = this.route.snapshot.params["id"];
   }
@@ -129,4 +131,7 @@ this.recordId = this.route.snapshot.params["id"];
     }
   }
 
+  goBack() {
+    this.location.back();
+  }
 }
