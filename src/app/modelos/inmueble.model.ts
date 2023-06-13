@@ -1,5 +1,5 @@
 export class InmuebleModel{
-  _id?: number;
+  id?: number;
   direccion?:string;
   precioVenta?:number;
   precioRenta?:number;
@@ -9,4 +9,5 @@ export class InmuebleModel{
   video?:string;
   foto?:string
   tipoPropiedadId?:number;
+  ciudadId?:string;
 }

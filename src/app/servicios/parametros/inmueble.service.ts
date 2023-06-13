@@ -41,7 +41,7 @@ export class InmuebleService {
   }
 
   EditarRegistro(registro: InmuebleModel): Observable<InmuebleModel> {
-    return this.http.put(`${this.urlBase}propiedad/${registro._id}`, registro)
+    return this.http.put(`${this.urlBase}propiedad/${registro.id}`, registro)
   }
 
   EliminarRegistro(id: number): Observable<any> {

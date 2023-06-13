@@ -10,6 +10,7 @@
     <tr style="font-family: Comic Sans MS;">
       <th>Foto</th>
       <th>Tipo</th>
+      <th>Ciudad</th>
       <th>Direccion</th>
       <th>Precio de venta</th>
       <th>Precio de alquiler</th>
@@ -34,6 +35,14 @@
     <span *ngSwitchCase="3">Finca</span>
     <span *ngSwitchDefault></span>
   </ng-container>
+  <td style="font-family: Comic Sans MS;">
+    <ng-container [ngSwitch]="r.ciudadId">
+      <span *ngSwitchCase="1" >Manizales</span>
+      <span *ngSwitchCase="2">Pereira</span>
+      <span *ngSwitchCase="3">Armenia</span>
+      <span *ngSwitchCase="4">Medellin</span>
+      <span *ngSwitchDefault></span>
+    </ng-container>
 
 <td style="font-family: Comic Sans MS;">{{r.direccion}}</td>
 <td style="font-family: Comic Sans MS;">{{r.precioVenta}}</td>
@@ -54,10 +63,10 @@
 </td>
 
 <td>
-  <a routerLink="/parametros/inmueble-editar/{{r._id}}" class="btn green">Editar Registro</a>
+  <a routerLink="/parametros/inmueble-editar/{{r.id}}" class="btn green">Editar Registro</a>
 </td>
 <td>
-  <a routerLink="/parametros/inmueble-eliminar/{{r._id}}" class="btn red">Eliminar Registro</a>
+  <a routerLink="/parametros/inmueble-eliminar/{{r.id}}" class="btn red">Eliminar Registro</a>
 </td>
 
 </tr>

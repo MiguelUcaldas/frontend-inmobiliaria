@@ -36,7 +36,7 @@ export class EliminarInmuebleComponent {
   BuscarRegistro() {
     this.servicio.BuscarRegistro(this.recordId).subscribe({
       next: (datos: InmuebleModel) => {
-        this.recordId = datos._id!;
+        this.recordId = datos.id!;
         this.direccion = datos.direccion!;
         this.precioVenta = datos.precioVenta!;
         this.precioRenta = datos.precioRenta!;

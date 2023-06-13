@@ -40,7 +40,7 @@ this.recordId = this.route.snapshot.params["id"];
   BuscarRegistro(){
     this.servicio.BuscarRegistro(this.recordId).subscribe({
       next:(datos:InmuebleModel)=>{
-        this.obtenerFgDatos["id"].setValue(datos._id);
+        this.obtenerFgDatos["id"].setValue(datos.id);
         this.obtenerFgDatos["direccion"].setValue(datos.direccion);
         this.obtenerFgDatos["precioVenta"].setValue(datos.precioVenta);
         this.obtenerFgDatos["precioRenta"].setValue(datos.precioVenta);
@@ -82,7 +82,7 @@ this.recordId = this.route.snapshot.params["id"];
   }
   obtenerRegistro(): InmuebleModel {
     let model = new InmuebleModel();
-    model._id = parseInt(this.obtenerFgDatos["id"].value);
+    model.id = parseInt(this.obtenerFgDatos["id"].value);
     model.direccion = this.obtenerFgDatos["direccion"].value;
     model.precioVenta = this.obtenerFgDatos["precioVenta"].value;
     model.precioRenta = this.obtenerFgDatos["precioRenta"].value;

@@ -23,7 +23,7 @@
         <label for="celular">Celular</label>
       </div>
     </div>
-    <div class="input-field col s4">
+    <div class="input-field col s2">
       <textarea formControlName="mensaje" id="Descripcion" type="text" class="validate"></textarea>
       <label for="mensaje">Descripción</label>
     </div>
@@ -37,6 +37,10 @@
       <div class="col s12">
         <button class="btn waves-effect waves-light" type="button" (click)="EnviarCorreo()">Enviar
           <i class="material-icons right">send</i>
+        </button>
+      </div>
+      <div class="col s12 right-align" id="boton">
+        <button class="btn red" type="button" routerLink="/inicio" >Cancelar
         </button>
       </div>
     </div>
