@@ -1,35 +1,40 @@
 #login-page {
-    width: 500px;
-    font-family: 'Comic Sans MS';
- }
+  width: 500px;
+  font-family: "Comic Sans MS";
+}
 
- .card {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -moz-transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
- }
+.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
- .show-errors{
-     color: red;
- }
+.show-errors {
+  color: red;
+}
 
- #iniciar{
-  font-family:'Comic Sans MS';
- }
+#iniciar {
+  font-family: "Comic Sans MS";
+}
 
- #identificar button{
-  font-family: 'Comic Sans MS';
+#identificar button {
+  font-family: "Comic Sans MS";
   background-color: black;
-  color:aliceblue;
- }
+  color: aliceblue;
+}
 
- #opcion{
-  font-family: 'Comic Sans MS';
+#opcion {
+  font-family: "Comic Sans MS";
   color: black;
+}
 
- }
+#ReCaptcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

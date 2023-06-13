@@ -1,5 +1,5 @@
 textarea#Descripcion {
-  width: 900px;
+  width: 1020px;
   height: 280px;
   font-family: 'Comic Sans MS';
 }
@@ -38,5 +38,11 @@ textarea#Descripcion {
 #nombre {
   border: 1px solid #ccc;
   padding: 20px;
+  font-family: "Comic Sans MS";
 }
 
+#ReCaptcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

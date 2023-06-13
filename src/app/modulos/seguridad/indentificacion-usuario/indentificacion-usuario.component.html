@@ -2,6 +2,7 @@
   <div class="col s12 z-depth-6 card-panel" id="iniciar">
     <form [formGroup]="fGroup" class="login-form">
       <div class="row">
+        <h4 class="center-align">Iniciar Sesión</h4>
       </div>
       <div class="row" id="iniciar">
         <div class="input-field col s12" >
@@ -25,15 +26,15 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="input-field col s12" id="ReCaptcha">
+          <re-captcha formControlName="recaptcha" >
+          </re-captcha>
+        </div>
+      </div>
       <div class="row" id="identificar">
         <div class="input-field col s12">
           <button (click)="IdentificarUsuario()" class="btn waves-effect waves-light col s12">Identificar</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <re-captcha formControlName="recaptcha" >
-          </re-captcha>
         </div>
       </div>
 
@@ -42,7 +43,7 @@
           <p class="margin medium-small"><a routerLink="/seguridad/registro-publico">Registrarse</a></p>
         </div>
         <div class="input-field col s6 m6 l6">
-            <p class="margin right-align medium-small"><a routerLink="/seguridad/recuperar-clave">Olvide mi contraseña</a></p>
+            <p class="margin right-align medium-small"><a routerLink="/seguridad/recuperar-clave">Olvidé mi contraseña</a></p>
         </div>
       </div>
     </form>

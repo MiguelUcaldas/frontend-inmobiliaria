@@ -14,3 +14,14 @@
   background-color: black;
   color:aliceblue;
  }
+
+ #ReCaptcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-page {
+  width: 500px;
+  font-family: "Comic Sans MS";
+}

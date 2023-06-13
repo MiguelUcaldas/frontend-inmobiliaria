@@ -1,5 +1,8 @@
-<div class="col nombre" id="nombre">
+<div class="contact-page" id="nombre">
   <form [formGroup]="fGroup" class="col s12">
+    <div class="row">
+      <h4 class="center-align">Contáctenos</h4>
+    </div>
     <div class="col">
       <div class="input-field col s3">
         <input formControlName="nombreCompleto" id="Nombre" type="text" class="validate" />
@@ -23,6 +26,12 @@
     <div class="input-field col s4">
       <textarea formControlName="mensaje" id="Descripcion" type="text" class="validate"></textarea>
       <label for="mensaje">Descripción</label>
+    </div>
+    <div class="row">
+      <div class="input-field col s12" id="ReCaptcha">
+        <re-captcha formControlName="recaptcha" >
+        </re-captcha>
+      </div>
     </div>
     <div class="col" id="boton">
       <div class="col s12">

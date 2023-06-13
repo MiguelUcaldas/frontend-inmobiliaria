@@ -1,5 +1,8 @@
-<div class="col s12 formulario">
+<div class="col s12 formulario" id="registro">
   <form [formGroup]="fGroup" class="col s12">
+    <div class="row">
+      <h4 class="center-align">Registrarse</h4>
+    </div>
     <div class="col">
       <div class="input-field col s3">
         <input formControlName="primerNombre" id="primerNombre" type="text" class="validate" />
@@ -26,6 +29,12 @@
       <div class="input-field col s4">
         <input formControlName="telefono" id="telefono" type="text" class="validate" />
         <label for="telefono">Teléfono Celular</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12" id="ReCaptcha">
+        <re-captcha formControlName="recaptcha" >
+        </re-captcha>
       </div>
     </div>
     <div class="col">
