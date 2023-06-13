@@ -8,4 +8,5 @@ export class InmuebleModel{
   venta?:boolean;
   video?:string;
   foto?:string
+  tipoPropiedadId?:number;
 }

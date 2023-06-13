@@ -6,40 +6,65 @@
 <table>
   <thead>
     <tr style="font-family: Comic Sans MS;">
-      <th>Nombre</th>
+      <th>Foto</th>
+      <th>Tipo</th>
+      <th>Direccion</th>
       <th>Precio de venta</th>
       <th>Precio de alquiler</th>
-      <th>Imagen</th>
-      <th>Direccion</th>
       <th>Estado</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
-      <td>{{r.direccion}}</td>
-      <td>{{r.precioVenta}}</td>
-      <td>{{r.precioRenta}}</td>
-      <td><img src="{{BASE_URL}}ObtenerArchivo/1/{{r.foto}}" class="imagenListadoRegistros"/></td>
-      <td>{{r.direccion}}</td>
-      <td>{{r.renta}}</td>
-      <td>{{r.venta}}</td>
-      <td>
-        <a routerLink="/parametros/inmueble-editar/{{r._id}}" class="btn green">Editar Registro</a>&nbsp;
-        <a routerLink="/parametros/inmueble-eliminar/{{r._id}}" class="btn red">Eliminar Registro</a>
+      <!--<td>{{r.tipoPropiedadId}}</td> -->
+<td style="font-family: Comic Sans MS;">
+  <ng-container [ngSwitch]="r.tipoPropiedadId">
+    <span *ngSwitchCase="1" ><img src="../../../../../assets/apart.jpg" id="foto"></span>
+    <span *ngSwitchCase="2"><img src="../../../../../assets/casa.jpg" id="foto"></span>
+    <span *ngSwitchCase="3"><img src="../../../../../assets/finca.jpg" id="foto"></span>
+    <span *ngSwitchDefault></span>
+  </ng-container>
+</td>
+<td style="font-family: Comic Sans MS;">
+  <ng-container [ngSwitch]="r.tipoPropiedadId">
+    <span *ngSwitchCase="1" >Apartamento</span>
+    <span *ngSwitchCase="2">Casa</span>
+    <span *ngSwitchCase="3">Finca</span>
+    <span *ngSwitchDefault></span>
+  </ng-container>
 
-      </td>
-    </tr>
-    <tr>
-      <td colspan="5" style="font-family: Comic Sans MS;">
-        <pagination-controls
-                    (pageChange)="pag = $event; ListarRegistros()"
-                    previousLabel="Anterior"
-                    nextLabel="Siguiente"
-                    screenReaderPaginationLabel="Navegación"
-                    screenReaderPageLabel="Página"
-                    screenReaderCurrentLabel="Página Actual">
-        </pagination-controls>
-      </td>
-    </tr>
-  </tbody>
+<td style="font-family: Comic Sans MS;">{{r.direccion}}</td>
+<td style="font-family: Comic Sans MS;">{{r.precioVenta}}</td>
+<td style="font-family: Comic Sans MS;">{{r.precioRenta}}</td>
+
+<!--<td><img src="../../../../../assets/casa.jpg" class="imagenListadoRegistros" /></td>
+
+<td>{{r.direccion}}</td>
+ <td>{{r.renta}}</td>
+      <td>{{r.venta}}</td>-->
+<td>
+  <span *ngIf="r.renta" style="font-family: Comic Sans MS;">EN RENTA</span>
+  <span *ngIf="!r.renta" style="font-family: Comic Sans MS;"></span>
+</td>
+<td>
+  <span *ngIf="r.venta" style="font-family: Comic Sans MS;">EN VENTA</span>
+  <span *ngIf="!r.venta" style="font-family: Comic Sans MS;"></span>
+</td>
+
+<td>
+  <a routerLink="/parametros/inmueble-editar/{{r._id}}" class="btn green">Editar Registro</a>
+</td>
+<td>
+  <a routerLink="/parametros/inmueble-eliminar/{{r._id}}" class="btn red">Eliminar Registro</a>
+</td>
+
+</tr>
+<tr>
+  <td colspan="5" style="font-family: Comic Sans MS;">
+    <pagination-controls (pageChange)="pag = $event; ListarRegistros()" previousLabel="Anterior" nextLabel="Siguiente"
+      screenReaderPaginationLabel="Navegación" screenReaderPageLabel="Página" screenReaderCurrentLabel="Página Actual">
+    </pagination-controls>
+  </td>
+</tr>
+</tbody>
 </table>

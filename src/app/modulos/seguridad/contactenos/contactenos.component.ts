@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { contactenosUsuarioModel } from 'src/app/modelos/contactenos-usuario.model';
 import { usuarioModel } from 'src/app/modelos/usuario.model';
 import { LogicaNegocioService } from 'src/app/servicios/logica-negocio.service';
+import { Router } from '@angular/router';
 declare const M: any;
 
 @Component({
@@ -15,7 +16,8 @@ export class ConctactenosComponent {
 
   constructor(
     private fb: FormBuilder,
-    private servicioLogicaNegocio: LogicaNegocioService
+    private servicioLogicaNegocio: LogicaNegocioService,
+    private router : Router
   ) {
   }
 
@@ -55,11 +57,12 @@ export class ConctactenosComponent {
       tipoMensaje: campos["tipoMensaje"].value,
       correo: campos["correo"].value,
       celular: campos["celular"].value,
-      mensaje: campos["mensaje"].value    
+      mensaje: campos["mensaje"].value
     }
     console.log(datos);
     this.servicioLogicaNegocio.EnvioCorreoContactenos(datos).subscribe({
       next: (respuesta:boolean) => {
+        this.router.navigate(["/inicio"]);
         alert("Envío correcto, pronto estaremos en contacto.")
       },
       error: (err) => {

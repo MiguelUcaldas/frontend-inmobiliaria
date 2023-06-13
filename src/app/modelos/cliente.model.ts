@@ -5,6 +5,6 @@ export class ClienteModel{
     primerApellido?: string;
     segundoApellido?: string;
     correo?: string;
-    celular?: string;
+    telefono?: string;
     direccion?: string;
 }
