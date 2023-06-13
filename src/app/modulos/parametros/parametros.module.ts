@@ -16,6 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
 import { VerInmueblerComponent } from './inmueble/ver-inmueble/ver-inmueble.component';
 import { SolicitudComponent } from './inmueble/solicitud/solicitud.component';
+import { VentaInmuebleComponent } from './inmueble/venta-inmueble/venta-inmueble.component';
+import { RentaInmuebleComponent } from './inmueble/renta-inmueble/renta-inmueble.component';
+import { VerInmuebleRentaComponent } from './inmueble/ver-inmueble-renta/ver-inmueble-renta.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { SolicitudComponent } from './inmueble/solicitud/solicitud.component';
     EliminarInmuebleComponent,
     ListarAsesorComponent,
     VerInmueblerComponent,
-    SolicitudComponent
+    SolicitudComponent,
+    VentaInmuebleComponent,
+    RentaInmuebleComponent,
+    VerInmuebleRentaComponent
   ],
   imports: [
     CommonModule,

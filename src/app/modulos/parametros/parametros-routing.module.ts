@@ -11,6 +11,9 @@ import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.
 import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
 import { VerInmueblerComponent } from './inmueble/ver-inmueble/ver-inmueble.component';
 import { SolicitudComponent } from './inmueble/solicitud/solicitud.component';
+import { VentaInmuebleComponent } from './inmueble/venta-inmueble/venta-inmueble.component';
+import { RentaInmuebleComponent } from './inmueble/renta-inmueble/renta-inmueble.component';
+import { VerInmuebleRentaComponent } from './inmueble/ver-inmueble-renta/ver-inmueble-renta.component';
 
 const routes: Routes = [
   {
@@ -53,16 +56,20 @@ const routes: Routes = [
     component: ListarAsesorComponent
   },
   {
-    path:"inmueble-listar-Venta",
-    component: ListarInmuebleComponent
+    path:"inmueble-listar-venta",
+    component: VentaInmuebleComponent
   },
   {
-    path:"inmueble-listar-Alquiler",
-    component: ListarInmuebleComponent
+    path:"inmueble-listar-renta",
+    component: RentaInmuebleComponent
   },
   {
     path:"inmueble-ver/:id",
     component: VerInmueblerComponent
+  },
+  {
+    path:"inmueble-renta-ver/:id",
+    component: VerInmuebleRentaComponent
   },
   {
     path:"solicitud/:id",

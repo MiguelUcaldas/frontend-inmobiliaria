@@ -1,0 +1,71 @@
+<a  *ngIf="sesionActiva" routerLink="/parametros/inmueble-crear" class="btn black" style="font-family: Comic Sans MS;">Agregar Registro</a>
+
+<div class="row">
+  <h4 class="center-align">Listado Propiedades en Renta</h4>
+</div>
+
+<table>
+  <thead>
+    <tr style="font-family: Comic Sans MS;">
+      <th>Foto</th>
+      <th>Tipo</th>
+      <th>Ciudad</th>
+      <th>Direccion</th>
+      <th>Precio de Alquiler</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
+      <ng-container *ngIf="r.renta">
+        <td style="font-family: Comic Sans MS;">
+          <ng-container [ngSwitch]="r.tipoPropiedadId">
+            <span *ngSwitchCase="1" ><img src="../../../../../assets/apart.jpg" id="foto"></span>
+            <span *ngSwitchCase="2"><img src="../../../../../assets/casa.jpg" id="foto"></span>
+            <span *ngSwitchCase="3"><img src="../../../../../assets/finca.jpg" id="foto"></span>
+            <span *ngSwitchDefault></span>
+          </ng-container>
+        </td>
+        <td style="font-family: Comic Sans MS;">
+          <ng-container [ngSwitch]="r.tipoPropiedadId">
+            <span *ngSwitchCase="1" >Apartamento</span>
+            <span *ngSwitchCase="2">Casa</span>
+            <span *ngSwitchCase="3">Finca</span>
+            <span *ngSwitchDefault></span>
+          </ng-container>
+        </td>
+        <td style="font-family: Comic Sans MS;">
+          <ng-container [ngSwitch]="r.ciudadId">
+            <span *ngSwitchCase="1" >Manizales</span>
+            <span *ngSwitchCase="2">Pereira</span>
+            <span *ngSwitchCase="3">Armenia</span>
+            <span *ngSwitchCase="4">Medellin</span>
+            <span *ngSwitchDefault></span>
+          </ng-container>
+        </td>
+        <td style="font-family: Comic Sans MS;">{{r.direccion}}</td>
+        <td style="font-family: Comic Sans MS;">${{r.precioRenta | number:'1.0-0'}}</td>
+        <td>
+          <span *ngIf="r.renta" style="font-family: Comic Sans MS;">Disponible</span>
+          <span *ngIf="!r.renta" style="font-family: Comic Sans MS;"></span>
+        </td>
+        <td>
+          <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-editar/{{r.id}}" class="btn green">Editar Registro</a>
+        </td>
+        <td>
+          <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-eliminar/{{r.id}}" class="btn red">Eliminar Registro</a>
+        </td>
+        <td>
+          <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-renta-ver/{{r.id}}" class="btn blue" style="font-family: Comic Sans MS;">Ver</a>
+        </td>
+      </ng-container>
+    </tr>
+    <tr>
+      <td colspan="5" style="font-family: Comic Sans MS; color: black;">
+        <pagination-controls (pageChange)="pag = $event; ListarRegistros()" previousLabel="Anterior" nextLabel="Siguiente"
+          screenReaderPaginationLabel="Navegación" screenReaderPageLabel="Página" screenReaderCurrentLabel="Página Actual">
+        </pagination-controls>
+      </td>
+    </tr>
+  </tbody>
+</table>

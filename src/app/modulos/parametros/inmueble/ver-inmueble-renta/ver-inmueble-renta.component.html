@@ -1,5 +1,5 @@
 <fieldset class="center container" style="font-family: Comic Sans MS;">
-  <legend style="font-family: Comic Sans MS;">Visualización de la propiedad en Venta</legend>
+  <legend style="font-family: Comic Sans MS;">Visualización de la propiedad en Alquiler</legend>
   <div class="row">
     <div class="row">
     </div>
@@ -36,23 +36,21 @@
       <span *ngIf="asesorId === 2">Santiago Roncancio</span>
     </div>
     <div class="col s4">
-
-      Precio de Venta : ${{precioVenta | number:'1.0-0'}}
+      Precio de Renta : ${{precioRenta | number:'1.0-0'}}
     </div>
-
 
     <div class="col s4">
 
     </div>
     <div class="col s4">
-      Para Venta :
-      <span *ngIf="venta">Disponible</span>
-      <span *ngIf="!venta">Ocupado</span>
+      Para Alquiler :
+      <span *ngIf="renta">Disponible</span>
+      <span *ngIf="!renta">Ocupado</span>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <a routerLink="/parametros/inmueble-listar-venta" class="btn red" style="font-family: Comic Sans MS;">Cancelar</a>&nbsp;
+      <a routerLink="/parametros/inmueble-listar-renta" class="btn red" style="font-family: Comic Sans MS;">Cancelar</a>&nbsp;
       <button routerLink="/parametros/solicitud/{{recordId}}" class="btn" [class.disabled]="!venta && !renta"
         [disabled]="!venta && !renta" style="font-family: Comic Sans MS; background-color: green;">Solicitar</button>
     </div>
