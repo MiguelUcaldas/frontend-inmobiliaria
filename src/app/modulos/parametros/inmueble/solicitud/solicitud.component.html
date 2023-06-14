@@ -1,4 +1,4 @@
-<div class="contact-page" id="nombre">
+<div class="contact-page" id="solicitud">
   <form [formGroup]="fGroup" class="col s12">
     <div class="row">
       <h4 class="center-align" style="font-family: Comic Sans MS">
@@ -7,126 +7,90 @@
     </div>
     <!----------------------------------------------------------->
     <h6 href="">Id Propiedad:</h6>
-    <div class="input-field col s8" id="id">
-      <input
-        formControlName="id"
-        id="id"
-        type="text"
-        class="validate"
-        readonly
-      />
-      <label for="id">{{ recordId }}</label>
+    <div class="input-field col s8" id="recordId">
+      <input formControlName="recordId" id="recordId" type="text" class="validate" readonly />
+      <label for="recordId">{{ recordId }}</label>
     </div>
     <h6 href="">Dirección:</h6>
     <div class="input-field col s8" id="direccion">
-      <input
-        formControlName="direccion"
-        id="direccion"
-        type="text"
-        class="validate"
-        readonly
-      />
+      <input formControlName="direccion" id="direccion" type="text" class="validate" readonly />
       <label for="direccion">{{ direccion }}</label>
     </div>
     <h6 href="">Ciudad:</h6>
-    <div class="input-field col s8" id="ciudad">
-      <input
-        formControlName="ciudad"
-        id="ciudad"
-        type="text"
-        class="validate"
-        readonly
-      />
-      <label for="ciudad"
-        ><ng-container [ngSwitch]="ciudadId">
+    <div class="input-field col s8" id="ciudadId">
+      <input formControlName="ciudadId" id="ciudadId" type="text" class="validate" readonly />
+      <label for="ciudadId"><ng-container [ngSwitch]="ciudadId">
           <span *ngSwitchCase="1">Manizales</span>
           <span *ngSwitchCase="2">Pereira</span>
           <span *ngSwitchCase="3">Armenia</span>
           <span *ngSwitchCase="4">Medellin</span>
-          <span *ngSwitchDefault></span> </ng-container
-      ></label>
+          <span *ngSwitchDefault></span> </ng-container></label>
     </div>
     <h6 href="">Asesor:</h6>
-    <div class="input-field col s8" id="asesor">
-      <input
-        formControlName="asesor"
-        id="asesor"
-        type="text"
-        class="validate"
-        readonly
-      />
-      <label for="asesor"
-        ><ng-container [ngSwitch]="asesorId">
+    <div class="input-field col s8" id="asesorId">
+      <input formControlName="asesorId" id="asesorId" type="text" class="validate" readonly />
+      <label for="asesorId"><ng-container [ngSwitch]="asesorId">
           <span *ngSwitchCase="1">Juan Pablo Valencia</span>
           <span *ngSwitchCase="2">Santiago Roncancio</span>
-          <span *ngSwitchDefault></span> </ng-container
-      ></label>
+          <span *ngSwitchDefault></span> </ng-container></label>
     </div>
     <h6 href="">Disponible Renta:</h6>
     <div class="input-field col s8" id="renta">
-      <input
-        formControlName="renta"
-        id="renta"
-        type="text"
-        class="validate"
-        readonly
-      />
-      <label for="renta"
-        ><ng-container [ngSwitch]="renta">
+      <input formControlName="renta" id="renta" type="text" class="validate" readonly />
+      <label for="renta"><ng-container [ngSwitch]="renta">
           <span *ngSwitchCase="true">Disponible</span>
           <span *ngSwitchCase="false">No Disponible</span>
-          <span *ngSwitchDefault></span> </ng-container
-      ></label>
+          <span *ngSwitchDefault></span> </ng-container></label>
     </div>
     <h6 href="">Precio Renta:</h6>
     <div class="input-field col s8" id="precioRenta">
-      <input
-        formControlName="precioRenta"
-        id="precioRenta"
-        type="text"
-        class="validate"
-        readonly
-      />
-      <label for="precioRenta">{{ precioRenta }}</label>
+      <input formControlName="precioRenta" id="precioRenta" type="text" class="validate" readonly />
+      <label for="precioRenta">{{ precioRenta | number:'1.0-0'}}</label>
     </div>
     <h6 href="">Disponible Venta:</h6>
     <div class="input-field col s8" id="venta">
-      <input
-        formControlName="venta"
-        id="venta"
-        type="text"
-        class="validate"
-        readonly
-      />
-      <label for="venta"
-        ><ng-container [ngSwitch]="venta">
+      <input formControlName="venta" id="venta" type="text" class="validate" readonly />
+      <label for="venta"><ng-container [ngSwitch]="venta">
           <span *ngSwitchCase="true">Disponible</span>
           <span *ngSwitchCase="false">No Disponible</span>
-          <span *ngSwitchDefault></span> </ng-container
-      ></label>
+          <span *ngSwitchDefault></span> </ng-container></label>
     </div>
     <h6 href="">Precio Venta:</h6>
     <div class="input-field col s8" id="precioVenta">
-      <input
-        formControlName="precioVenta"
-        id="precioVenta"
-        type="text"
-        class="validate"
-        readonly
-      />
-      <label for="precioVenta">{{ precioVenta }}</label>
+      <input formControlName="precioVenta" id="precioVenta" type="text" class="validate" readonly />
+      <label for="precioVenta">{{ precioVenta | number:'1.0-0'}}</label>
     </div>
     <h6 href="">Tipo Solicitud:</h6>
     <div class="input-field col s8" id="tipoSolicitud">
-      <input
-        formControlName="tipoSolicitud"
-        id="tipoSolicitud"
-        type="text"
-        class="validate"
-      />
-      <label for="tipoSolicitud"></label>
+      <input formControlName="tipoSolicitud" id="tipoSolicitud" type="text" class="validate"
+        [readonly]="renta && !venta || !renta && venta" />
+      <label for="tipoSolicitud">
+        <ng-container [ngSwitch]="renta && venta">
+          <span *ngSwitchCase="true"></span>
+          <span *ngSwitchCase="false">
+            <span *ngIf="renta">Renta</span>
+            <span *ngIf="venta">Venta</span>
+          </span>
+        </ng-container>
+      </label>
     </div>
-    
+
+    <h6 href="">Nombre Completo:</h6>
+    <div class="input-field col s8" id="nombre">
+      <input formControlName="nombre" id="nombre" type="text" class="validate" />
+      <label for="nombre"></label>
+    </div>
+    <h6 href="">Correo:</h6>
+    <div class="input-field col s8" id="correo">
+      <input formControlName="correo" id="correo" type="text" class="validate" />
+      <label for="correo"></label>
+    </div>
+    <h6 href="">Celular:</h6>
+    <div class="input-field col s8" id="celular">
+      <input formControlName="celular" id="celular" type="text" class="validate" />
+      <label for="celular"></label>
+    </div>
+
     <div class="input-field col s12" id="ReCaptcha">
       <re-captcha formControlName="recaptcha">
       </re-captcha>
@@ -146,4 +110,4 @@
       </div>
     </div>
   </form>
-</div>
+  </div>

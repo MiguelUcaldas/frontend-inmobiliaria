@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InmuebleModel } from 'src/app/modelos/inmueble.model';
 import { LogicaNegocioService } from 'src/app/servicios/logica-negocio.service';
@@ -20,16 +20,17 @@ export class SolicitudComponent {
   precioRenta: number = 0;
   ciudadId: number = 0;
   asesorId: number = 0;
-  venta : boolean=false;
-  renta : boolean = false;
+  venta: boolean = false;
+  renta: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private servicioLogicaNegocio: LogicaNegocioService,
-    private router : Router,
+    private router: Router,
     private servicio: InmuebleService,
     private location: Location,
     private route: ActivatedRoute,
+
   ) {
     this.recordId = this.route.snapshot.params["id"];
   }
@@ -47,10 +48,8 @@ export class SolicitudComponent {
   }
 
   BuscarRegistro() {
-    console.log("ESTOY AQUIIIIIIIIIIIII LLEGANDO")
     this.servicio.BuscarRegistro(this.recordId).subscribe({
       next: (datos: InmuebleModel) => {
-        console.log(datos);
         this.recordId = datos.id!;
         this.ciudadId = datos.ciudadId!;
         this.asesorId = datos.asesorId!;
@@ -59,7 +58,6 @@ export class SolicitudComponent {
         this.precioRenta = datos.precioRenta!;
         this.venta = datos.venta!;
         this.renta = datos.renta!;
-
       },
       error: (err) => {
         alert("El registro no existe.")
@@ -73,10 +71,21 @@ export class SolicitudComponent {
   ConstruirFormulario() {
     this.BuscarRegistro()
     this.fGroup = this.fb.group({
-      recordId : [this.recordId,[Validators.required]],
-      ciudadId: [this.ciudadId, [Validators.required]],
-      direccion: [this.direccion, [Validators.required]],
-      tipoSolicitud:['', [Validators.required]]
+      recordId: ['', [Validators.required]],
+      ciudadId: ['', [Validators.required]],
+      direccion: ['', [Validators.required]],
+      tipoSolicitud: ['', [Validators.required]],
+      asesorId: ['', [Validators.required]],
+      precioVenta: ['', [Validators.required]],
+      precioRenta: ['', [Validators.required]],
+      venta: ['', [Validators.required]],
+      renta: ['', [Validators.required]],
+      nombre:['', [Validators.required]],
+      correo:['', [Validators.required]],
+      celular:['', [Validators.required]]
+
+
+
     });
   }
 
@@ -86,18 +95,22 @@ export class SolicitudComponent {
   EnviarCorreo() {
     let campos = this.ObtenerFormGroup;
     let datos = {
-      recordId:campos["id"].value,
+      recordId: campos["recordId"].value,
       direccion: campos["direccion"].value,
-      ciudadId: campos["ciudad"].value,
-      asesorId: campos["asesor"].value,
+      ciudadId: campos["ciudadId"].value,
+      asesorId: campos["asesorId"].value,
       precioRenta: campos["precioRenta"].value,
       precioVenta: campos["precioVenta"].value,
       venta: campos["venta"].value,
-      renta: campos["renta"].value
+      renta: campos["renta"].value,
+      tipoSolicitud: campos["tipoSolicitud"].value,
+      nombre: campos["nombre"].value,
+      correo: campos["correo"].value,
+      celular: campos["celular"].value,
+
     }
-    console.log(datos);
-    this.servicioLogicaNegocio.EnvioCorreoContactenos(datos).subscribe({
-      next: (respuesta:boolean) => {
+    this.servicioLogicaNegocio.EnvioCorreoSolicitud(datos).subscribe({
+      next: (respuesta: boolean) => {
         this.router.navigate(["/inicio"]);
         alert("Envío correcto, pronto estaremos en contacto.")
       },
@@ -107,14 +120,12 @@ export class SolicitudComponent {
     });
   }
 
-  get ObtenerFormGroup(){
+  get ObtenerFormGroup() {
     return this.fGroup.controls;
   }
 
   goBack() {
     this.location.back();
   }
-
-
 
 }

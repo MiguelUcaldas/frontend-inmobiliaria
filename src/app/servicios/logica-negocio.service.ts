@@ -16,4 +16,8 @@ export class LogicaNegocioService {
   EnvioCorreoContactenos(datos: any): Observable<boolean> {
     return this.http.post<any>(`${this.urlBase}contactenos`, datos);
   }
+
+  EnvioCorreoSolicitud(datos: any): Observable<boolean> {
+    return this.http.post<any>(`${this.urlBase}solicitud`, datos);
+  }
 }
