@@ -2,10 +2,16 @@ export namespace ConfiguracionMenuLateral {
     export const listaMenus = [
         {
             id: "6420c65e36e9b908405a0668",
-            ruta: "/seguridad/usuario-listar",
+            ruta: "/parametros/inmueble-listar-venta",
             icono:"<i class='material-icons'>cloud</i>",
-            texto:"Usuarios"
+            texto:"Comprar"
         },
+        {
+          id: "6489103ed88144709a92bfac",
+          ruta: "/parametros/inmueble-listar-renta",
+          icono:"<i class='material-icons'>cloud</i>",
+          texto:"Alquilar"
+      },
         {
             id: "64852e88752f222e3e6ea338",
             ruta: "/parametros/cliente-listar",

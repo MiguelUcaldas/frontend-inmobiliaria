@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { usuarioModel } from 'src/app/modelos/usuario.model';
+import { Router } from '@angular/router';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class RegistroPublicoUsuariosComponent {
 
   constructor(
     private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
+    private router : Router
   ) {
   }
 
@@ -51,6 +53,7 @@ export class RegistroPublicoUsuariosComponent {
     this.servicioSeguridad.RegistrarUsuarioPublico(datos).subscribe({
       next: (respuesta:usuarioModel) => {
         alert("Registro correcto, se ha enviado un mensaje para validar su dirección de correo electrónico.")
+        this.router.navigate(["/inicio"]);
       },
       error: (err) => {
         alert("Se ha producido un error en el registro.")

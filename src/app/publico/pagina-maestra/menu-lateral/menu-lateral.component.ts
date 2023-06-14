@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ItemMenuModel } from 'src/app/modelos/item.menu.model';
+import { usuarioModel } from 'src/app/modelos/usuario.model';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 declare const menuLateral:any;
@@ -14,11 +15,12 @@ export class MenuLateralComponent {
   constructor(
     private servicioSeguridad: SeguridadService
     ){
-
   }
-
   ngOnInit(){
     this.listaMenus = this.servicioSeguridad.ObtenerItemsMenuLateral();
     menuLateral();
+
+
+
   }
 }

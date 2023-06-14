@@ -1,5 +1,3 @@
-<a  *ngIf="sesionActiva" routerLink="/parametros/inmueble-crear" class="btn black" style="font-family: Comic Sans MS;">Agregar Registro</a>
-
 <div class="row">
   <h4 class="center-align">Listado Propiedades en Renta</h4>
 </div>
@@ -48,12 +46,6 @@
         <td>
           <span *ngIf="r.renta" style="font-family: Comic Sans MS;">Disponible</span>
           <span *ngIf="!r.renta" style="font-family: Comic Sans MS;"></span>
-        </td>
-        <td>
-          <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-editar/{{r.id}}" class="btn green">Editar Registro</a>
-        </td>
-        <td>
-          <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-eliminar/{{r.id}}" class="btn red">Eliminar Registro</a>
         </td>
         <td>
           <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-renta-ver/{{r.id}}" class="btn blue" style="font-family: Comic Sans MS;">Ver</a>

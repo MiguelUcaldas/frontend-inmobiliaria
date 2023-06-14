@@ -53,7 +53,12 @@
   <span *ngIf="r.venta" style="font-family: Comic Sans MS;">Disponible</span>
   <span *ngIf="!r.venta" style="font-family: Comic Sans MS;"></span>
 </td>
-
+<td>
+  <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-editar/{{r.id}}" class="btn green">Editar Registro</a>
+</td>
+<td>
+  <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-eliminar/{{r.id}}" class="btn red">Eliminar Registro</a>
+</td>
 
 <td>
   <a *ngIf="sesionActiva" routerLink="/parametros/inmueble-ver/{{r.id}}" class="btn blue" style="font-family: Comic Sans MS;">Ver</a>
