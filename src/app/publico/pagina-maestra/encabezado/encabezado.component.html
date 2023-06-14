@@ -1,7 +1,7 @@
 <nav class="encabezado">
- <div *ngIf="sesionActiva" id="ingreso" style="text-align: center; height: 20px; line-height: 20px;">En Linea</div>
- <div class="nav-wrapper" id="encabezado">
-    <img src = "../../../../assets/logo.png" atl="Logo">
+  <div *ngIf="sesionActiva" id="ingreso" style="text-align: center; height: 20px; line-height: 20px;">En Linea</div>
+  <div class="nav-wrapper" id="encabezado">
+    <img src="../../../../assets/logo.png" atl="Logo">
     <a routerLink="/inicio" class="brand-logo">
 
       Akinmueble</a>
@@ -18,5 +18,5 @@
 </nav>
 
 <div *ngIf="sesionActiva">
-<app-menu-lateral> </app-menu-lateral>
+  <app-menu-lateral> </app-menu-lateral>
 </div>

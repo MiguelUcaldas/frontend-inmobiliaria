@@ -25,17 +25,17 @@ const routes: Routes = [
     {
       path:"cambiar-clave",
       component: CambiarClaveComponent,
-      //canActivate:[ValidarSesionActivaGuard]
+      canActivate:[ValidarSesionActivaGuard]
     },
     {
       path:"recuperar-clave",
       component: RecuperarClaveComponent,
-      //canActivate:[ValidarSesionInactivaGuard]
+      canActivate:[ValidarSesionInactivaGuard]
     },
     {
       path:"cerrar-sesion",
       component: CerrarSesionComponent,
-      //canActivate:[ValidarSesionActivaGuard]
+      canActivate:[ValidarSesionActivaGuard]
     },
 
     {
