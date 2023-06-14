@@ -1,0 +1,38 @@
+<fieldset class="center container" style="font-family: Comic Sans MS;">
+  <legend>Eliminación de Inmuebles</legend>
+  <div class="row">
+    <div class="row">
+      <div class="showImage center-align">
+        <img src="../../../../../assets/eliminar.png" class="imagenEliminar" />
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col s12" style="font-family: Comic Sans MS;">
+      <strong>¿ Confirma la eliminación de los datos ?</strong>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row">
+      <div class="showImage center-align">
+        <img src="../../../../../assets/eliminar.png" class="imagenInmueble" />
+      </div>
+    </div>
+    <div class="row" style="font-family: Comic Sans MS;">
+      <div class="col s4">
+        Nombre: {{primerNombre}}{{segundoNombre}}{{primerApellido}}{{segundoApellido}}
+      </div>
+      <div class="col s4">
+        Correo:{{correo}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <button (click)="goBack()" class="btn red" style="font-family: Comic Sans MS;">Cancelar</button>&nbsp;
+        <button (click)="EliminarRegistro()" class="btn green" style="font-family: Comic Sans MS;">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</fieldset>

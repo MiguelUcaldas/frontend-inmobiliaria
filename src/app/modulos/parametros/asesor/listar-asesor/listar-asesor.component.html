@@ -1,24 +1,26 @@
-<br />
-<a routerLink="/parametros/asesor-agregar" class="btn black" style="font-family: Comic Sans MS;">Agregar Registro</a>
-<br />
-<h3 style="font-family:Comic Sans MS;">Lista de Asesores</h3>
+<h3 style="font-family:Comic Sans MS; text-align: center;">Lista de Asesores</h3>
 <table>
-
     <thead>
       <tr style="font-family: Comic Sans MS;">
+         <th>Documento</th>
           <th>Nombre</th>
-          <th>Documento</th>
           <th>Correo</th>
           <th>Celular</th>
-
+          <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
-        <td style="font-family: Comic Sans MS;">{{r.primerNombre}} {{r.segundoNombre}} {{r.primerApellido}} {{r.segundoApellido}}</td>
         <td style="font-family: Comic Sans MS;">{{r.documento}}</td>
+        <td style="font-family: Comic Sans MS;">{{r.primerNombre}} {{r.segundoNombre}} {{r.primerApellido}} {{r.segundoApellido}}</td>
         <td style="font-family: Comic Sans MS;">{{r.correo}}</td>
         <td style="font-family: Comic Sans MS;">{{r.telefono}}</td>
+        <td>
+            <a routerLink="/parametros/cliente-editar/{{r.id}}" class="btn blue" style="font-family: Comic Sans MS;">Editar Registro</a>
+        </td>
+        <td>
+        <a routerLink="/parametros/asesor-eliminar/{{r.id}}" class="btn red" style="font-family: Comic Sans MS;">Eliminar Registro</a>
+      </td>
       </tr>
       <tr>
         <td colspan="5" style="font-family: Comic Sans MS;" >

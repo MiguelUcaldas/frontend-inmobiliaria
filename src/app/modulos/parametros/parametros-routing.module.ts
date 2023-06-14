@@ -8,18 +8,27 @@ import { EditarInmuebleComponent } from './inmueble/editar-inmueble/editar-inmue
 import { CrearClienteComponent } from './cliente/crear-cliente/crear-cliente.component';
 import { EliminarClienteComponent } from './cliente/eliminar-cliente/eliminar-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
-import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
 import { VerInmueblerComponent } from './inmueble/ver-inmueble/ver-inmueble.component';
 import { SolicitudComponent } from './inmueble/solicitud/solicitud.component';
 import { VentaInmuebleComponent } from './inmueble/venta-inmueble/venta-inmueble.component';
 import { RentaInmuebleComponent } from './inmueble/renta-inmueble/renta-inmueble.component';
 import { VerInmuebleRentaComponent } from './inmueble/ver-inmueble-renta/ver-inmueble-renta.component';
 import { VerInmuebleVentaComponent } from './inmueble/ver-inmueble-venta/ver-inmueble-venta.component';
+import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
+import { EliminarAsesorComponent } from './asesor/eliminar-asesor/eliminar-asesor.component';
 
 const routes: Routes = [
   {
     path:"inmueble-listar",
     component: ListarInmuebleComponent
+  },
+  {
+    path:"asesor-listar",
+    component: ListarAsesorComponent
+  },
+  {
+    path:"asesor-eliminar",
+    component: EliminarAsesorComponent
   },
 
   {
@@ -51,10 +60,6 @@ const routes: Routes = [
   {
     path:"cliente-editar/:id",
     component: EditarClienteComponent
-  },
-  {
-    path:"asesor-listar",
-    component: ListarAsesorComponent
   },
   {
     path:"inmueble-listar-venta",

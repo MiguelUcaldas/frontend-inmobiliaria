@@ -21,6 +21,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ErrorDeServidorComponent,
     InicioComponent,
 
+
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,8 @@
-<h2 style="text-align: center;"> Bienvenido a Akinmueble</h2>
-<h6 style="text-align: center;">Aquí encontratras los mejores y mas comodos lugares, para disfrutar en familia de un comodo hogar.</h6>
+<h2 *ngIf="!sesionActiva" style="text-align: center;"> Bienvenido a Akinmueble</h2>
+<h6 *ngIf="!sesionActiva" style="text-align: center;">Aquí encontratras los mejores y mas comodos lugares, para disfrutar en familia de un comodo hogar.</h6>
+
+<h2 *ngIf="sesionActiva" style="text-align: center;"> Disfruta de los servicios de nuestra pagina</h2>
+<h6 *ngIf="sesionActiva" style="text-align: center;">Podras solicitar una propiedad tanto si la deseas alquilar o comprar.</h6>
 <div class="row">
   <style>
   </style>

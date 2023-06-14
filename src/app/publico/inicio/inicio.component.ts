@@ -12,12 +12,15 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
 export class InicioComponent {
   listaRegistros: InmuebleModel[] = [];
 
+
+
   constructor(
     private servicio: InmuebleService,
-    private servicioSeguridad: SeguridadService
+    private servicioSeguridad: SeguridadService,
   ) {
   }
   sesionActiva: boolean = false;
+
 
   ngOnInit() {
     this.servicio.listarRegistros().subscribe({
@@ -28,7 +31,10 @@ export class InicioComponent {
 
       }
     })
+
+    this.ValidarSesion();
   }
+
 
   ValidarSesion() {
     this.servicioSeguridad.ObtenerDatosSesion().subscribe({
@@ -43,6 +49,7 @@ export class InicioComponent {
       }
     })
   }
+
 }
 
 

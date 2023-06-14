@@ -12,7 +12,6 @@ import { EditarInmuebleComponent } from './inmueble/editar-inmueble/editar-inmue
 import { EliminarInmuebleComponent } from './inmueble/eliminar-inmueble/eliminar-inmueble.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
 import { VerInmueblerComponent } from './inmueble/ver-inmueble/ver-inmueble.component';
 import { SolicitudComponent } from './inmueble/solicitud/solicitud.component';
 import { VentaInmuebleComponent } from './inmueble/venta-inmueble/venta-inmueble.component';
@@ -20,6 +19,8 @@ import { RentaInmuebleComponent } from './inmueble/renta-inmueble/renta-inmueble
 import { VerInmuebleRentaComponent } from './inmueble/ver-inmueble-renta/ver-inmueble-renta.component';
 import { VerInmuebleVentaComponent } from './inmueble/ver-inmueble-venta/ver-inmueble-venta.component';
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+import { ListarAsesorComponent } from './asesor/listar-asesor/listar-asesor.component';
+import { EliminarAsesorComponent } from './asesor/eliminar-asesor/eliminar-asesor.component';
 
 
 @NgModule({
@@ -32,13 +33,14 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
     CrearInmuebleComponent,
     EditarInmuebleComponent,
     EliminarInmuebleComponent,
-    ListarAsesorComponent,
     VerInmueblerComponent,
     SolicitudComponent,
     VentaInmuebleComponent,
     RentaInmuebleComponent,
     VerInmuebleRentaComponent,
-    VerInmuebleVentaComponent
+    VerInmuebleVentaComponent,
+    ListarAsesorComponent,
+    EliminarAsesorComponent
   ],
   imports: [
     CommonModule,
