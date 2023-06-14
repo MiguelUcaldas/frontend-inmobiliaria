@@ -72,14 +72,14 @@ export class SolicitudComponent {
     this.BuscarRegistro()
     this.fGroup = this.fb.group({
       recordId: ['', [Validators.required]],
-      ciudadId: ['', [Validators.required]],
-      direccion: ['', [Validators.required]],
-      tipoSolicitud: ['', [Validators.required]],
-      asesorId: ['', [Validators.required]],
-      precioVenta: ['', [Validators.required]],
-      precioRenta: ['', [Validators.required]],
-      venta: ['', [Validators.required]],
-      renta: ['', [Validators.required]],
+      ciudadId: [''],
+      direccion: [''],
+      tipoSolicitud: [''],
+      asesorId: [''],
+      precioVenta: [''],
+      precioRenta: [''],
+      venta: [''],
+      renta: [''],
       nombre:['', [Validators.required]],
       correo:['', [Validators.required]],
       celular:['', [Validators.required]]
@@ -95,27 +95,21 @@ export class SolicitudComponent {
   EnviarCorreo() {
     let campos = this.ObtenerFormGroup;
     let datos = {
-      recordId: campos["recordId"].value,
-      direccion: campos["direccion"].value,
-      ciudadId: campos["ciudadId"].value,
-      asesorId: campos["asesorId"].value,
-      precioRenta: campos["precioRenta"].value,
-      precioVenta: campos["precioVenta"].value,
-      venta: campos["venta"].value,
-      renta: campos["renta"].value,
+      propiedadId: this.recordId.toString(),
       tipoSolicitud: campos["tipoSolicitud"].value,
-      nombre: campos["nombre"].value,
+      nombreCompleto: campos["nombre"].value,
       correo: campos["correo"].value,
       celular: campos["celular"].value,
 
     }
+    console.log(datos);
     this.servicioLogicaNegocio.EnvioCorreoSolicitud(datos).subscribe({
       next: (respuesta: boolean) => {
         this.router.navigate(["/inicio"]);
         alert("Envío correcto, pronto estaremos en contacto.")
       },
       error: (err) => {
-        alert("No se ha podido enviar el correo.")
+        alert("No se ha podido enviar el correo con la solicitud.")
       }
     });
   }

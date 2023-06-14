@@ -62,16 +62,15 @@
     </div>
     <h6 href="">Tipo Solicitud:</h6>
     <div class="input-field col s8" id="tipoSolicitud">
-      <input formControlName="tipoSolicitud" id="tipoSolicitud" type="text" class="validate"
-        [readonly]="renta && !venta || !renta && venta" />
+      <input formControlName="tipoSolicitud" id="tipoSolicitud" type="text" class="validate"/>
       <label for="tipoSolicitud">
-        <ng-container [ngSwitch]="renta && venta">
+        <!-- <ng-container [ngSwitch]="renta && venta">
           <span *ngSwitchCase="true"></span>
           <span *ngSwitchCase="false">
             <span *ngIf="renta">Renta</span>
             <span *ngIf="venta">Venta</span>
           </span>
-        </ng-container>
+        </ng-container> -->
       </label>
     </div>
 
@@ -90,11 +89,11 @@
       <input formControlName="celular" id="celular" type="text" class="validate" />
       <label for="celular"></label>
     </div>
-
+<!-- 
     <div class="input-field col s12" id="ReCaptcha">
       <re-captcha formControlName="recaptcha">
       </re-captcha>
-    </div>
+    </div> -->
 
     <div class="col" id="boton">
       <div class="col s12" id="button">
