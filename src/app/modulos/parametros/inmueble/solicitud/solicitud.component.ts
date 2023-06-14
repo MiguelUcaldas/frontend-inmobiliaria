@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { InmuebleModel } from 'src/app/modelos/inmueble.model';
 import { LogicaNegocioService } from 'src/app/servicios/logica-negocio.service';
 import { InmuebleService } from 'src/app/servicios/parametros/inmueble.service';
@@ -14,7 +14,7 @@ declare const M: any;
 })
 export class SolicitudComponent {
   fGroup: FormGroup = new FormGroup({});
-  recordId: number = 9;
+  recordId: number = 0;
   direccion: string = "";
   precioVenta: number = 0;
   precioRenta: number = 0;
@@ -28,10 +28,13 @@ export class SolicitudComponent {
     private servicioLogicaNegocio: LogicaNegocioService,
     private router : Router,
     private servicio: InmuebleService,
-    private location: Location
+    private location: Location,
+    private route: ActivatedRoute,
   ) {
+    this.recordId = this.route.snapshot.params["id"];
   }
   ngOnInit() {
+    this.BuscarRegistro();
     this.ConstruirFormulario();
     const materializeScript = document.createElement('script');
     materializeScript.src =
@@ -68,17 +71,12 @@ export class SolicitudComponent {
    * Construcción del envio con los controles
    */
   ConstruirFormulario() {
-    this.BuscarRegistro();
+    this.BuscarRegistro()
     this.fGroup = this.fb.group({
       recordId : [this.recordId,[Validators.required]],
       ciudadId: [this.ciudadId, [Validators.required]],
       direccion: [this.direccion, [Validators.required]],
-      precioRenta: [this.precioRenta, [Validators.required]],
-      precioVenta: [this.precioVenta, [Validators.required]],
-      asesorId:[this.asesorId, [Validators.required]],
-      renta:[this.renta, [Validators.required]],
-      venta:[this.venta, [Validators.required]]
-
+      tipoSolicitud:['', [Validators.required]]
     });
   }
 

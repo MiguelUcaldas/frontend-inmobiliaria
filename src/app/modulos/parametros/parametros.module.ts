@@ -19,6 +19,7 @@ import { VentaInmuebleComponent } from './inmueble/venta-inmueble/venta-inmueble
 import { RentaInmuebleComponent } from './inmueble/renta-inmueble/renta-inmueble.component';
 import { VerInmuebleRentaComponent } from './inmueble/ver-inmueble-renta/ver-inmueble-renta.component';
 import { VerInmuebleVentaComponent } from './inmueble/ver-inmueble-venta/ver-inmueble-venta.component';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
 
 
 @NgModule({
@@ -44,7 +45,17 @@ import { VerInmuebleVentaComponent } from './inmueble/ver-inmueble-venta/ver-inm
     ParametrosRoutingModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RecaptchaFormsModule,
+    RecaptchaModule
+  ],
+  providers: [
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: "6LfTXQ8mAAAAAGbY7A2JxSfsUPx94NVOAz08MhIt"
+      } as RecaptchaSettings
+    }
   ]
 })
 export class ParametrosModule { }

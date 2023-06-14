@@ -1,3 +1,10 @@
 #button{
     padding-bottom: 20px;
 }
+
+
+#ReCaptcha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
