@@ -3,53 +3,54 @@
     <div class="row">
       <h4 class="center-align" style="font-family: Comic Sans MS;">Solicitud Compra-Alquiler</h4>
     </div>
-    <div class="col s4" style="font-family: Comic Sans MS;">
-      Ciudad:
-      <span *ngIf="ciudadId == 1">Manizales</span>
-      <span *ngIf="ciudadId == 2">Pereira</span>
-      <span *ngIf="ciudadId == 3">Armenia</span>
-      <span *ngIf="ciudadId == 4">Medellin</span>
+    <!----------------------------------------------------------->
+    <div class="input-field col s8" id="id">
+      <input formControlName="id" id="id" type="text" class="validate" readonly/>
+      <label for="id">{{recordId}}</label>
+    </div>
+    <div class="input-field col s8" id="direccion">
+      <input formControlName="direccion" id="direccion" type="text" class="validate" readonly/>
+      <label for="direccion">{{direccion}}</label>
+    </div>
+    <div class="input-field col s8" id="ciudad">
+      <input formControlName="ciudad" id="ciudad" type="text" class="validate" readonly/>
+      <label for="ciudad">{{ciudadId}}</label>
+    </div>
+    <div class="input-field col s8" id="asesor">
+      <input formControlName="asesor" id="asesor" type="text" class="validate" readonly/>
+      <label for="asesor">{{asesorId}}</label>
+    </div>
+    <div class="input-field col s8" id="precioRenta">
+      <input formControlName="precioRenta" id="precioRenta" type="text" class="validate" readonly/>
+      <label for="precioRenta">{{precioRenta}}</label>
+    </div>
+    <div class="input-field col s8" id="precioVenta">
+      <input formControlName="precioVenta" id="precioVenta" type="text" class="validate"readonly />
+      <label for="precioVenta">{{precioRenta}}</label>
+    </div>
+    <div class="input-field col s8" id="venta">
+      <input formControlName="venta" id="venta" type="text" class="validate" readonly/>
+      <label for="venta">{{venta}}</label>
+    </div>
+    <div class="input-field col s8" id="renta">
+      <input formControlName="renta" id="renta" type="text" class="validate"readonly />
+      <label for="renta">{{renta}}</label>
+    </div>
+<!--
+    <div class="input-field col s12" id="ReCaptcha">
+      <re-captcha formControlName="recaptcha">
+      </re-captcha>
+    </div>-->
 
+    <div class="col" id="boton">
+      <div class="col s12" id="button">
+        <button class="btn waves-effect waves-light" (click)="EnviarCorreo()">Solicitar
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+      <div class="col s12" id="button">
+        <button class="btn red" type="button" (click)="goBack()">Cancelar
+        </button>
+      </div>
     </div>
-    <div class="col s4" style="font-family: Comic Sans MS;">
-      Tipo de Solicitud:
-    </div>
-    <select name="Tipo de Solicitud" id="tipo" style="font-family: Comic Sans MS;">
-      <option value="vacio">Seleccionar...</option>
-      <option value="Compra">Comprar</option>
-      <option value="Alquiler">Rentar</option>
-    </select>
-    <div class="col s4" style="font-family: Comic Sans MS;">
-      Asesor:
-      <a *ngIf="asesorId == 1">Juan Pablo Valencia</a>
-      <a *ngIf="asesorId == 2">Santiago Roncancio</a>
 
-
-    </div>
-    <div class="input-field col s8" id="correo">
-      <input formControlName="correo" id="email" type="email" class="validate" />
-      <label for="email">Correo</label>
-    </div>
-    <div class="input-field col s4" id="celular">
-      <input formControlName="celular" id="celular" type="text" class="validate" />
-      <label for="celular">Celular</label>
-    </div>
-<div class="row">
-  <div class="input-field col s12" id="ReCaptcha">
-    <re-captcha formControlName="recaptcha">
-    </re-captcha>
-  </div>
-</div>
-<div class="col" id="boton">
-  <div class="col s12" id="button">
-    <button class="btn waves-effect waves-light" (click)="EnviarCorreo()">Solicitar
-      <i class="material-icons right">send</i>
-    </button>
-  </div>
-  <div class="col s12" id="button">
-    <button class="btn red" type="button" (click)="goBack()">Cancelar
-    </button>
-  </div>
-</div>
-</form>
-</div>

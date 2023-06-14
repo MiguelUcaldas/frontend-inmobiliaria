@@ -21,6 +21,7 @@ export class EncabezadoComponent {
     this.servicioSeguridad.ObtenerDatosSesion().subscribe({
       next : (datos: UsuarioValidadoModel)=>{
         if(datos.token != ""){
+          datos.user
           this.sesionActiva = true;
         }else{
           this.sesionActiva = false;

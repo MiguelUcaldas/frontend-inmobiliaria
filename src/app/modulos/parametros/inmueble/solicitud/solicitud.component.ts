@@ -14,13 +14,12 @@ declare const M: any;
 })
 export class SolicitudComponent {
   fGroup: FormGroup = new FormGroup({});
-  recordId: number = 0;
+  recordId: number = 9;
   direccion: string = "";
   precioVenta: number = 0;
   precioRenta: number = 0;
   ciudadId: number = 0;
   asesorId: number = 0;
-  foto: string = "";
   venta : boolean=false;
   renta : boolean = false;
 
@@ -45,8 +44,8 @@ export class SolicitudComponent {
   }
 
   BuscarRegistro() {
+    console.log("ESTOY AQUIIIIIIIIIIIII LLEGANDO")
     this.servicio.BuscarRegistro(this.recordId).subscribe({
-
       next: (datos: InmuebleModel) => {
         console.log(datos);
         this.recordId = datos.id!;
@@ -55,7 +54,6 @@ export class SolicitudComponent {
         this.direccion = datos.direccion!;
         this.precioVenta = datos.precioVenta!;
         this.precioRenta = datos.precioRenta!;
-        this.foto = datos.foto!;
         this.venta = datos.venta!;
         this.renta = datos.renta!;
 
@@ -70,12 +68,16 @@ export class SolicitudComponent {
    * Construcción del envio con los controles
    */
   ConstruirFormulario() {
+    this.BuscarRegistro();
     this.fGroup = this.fb.group({
-      nombreCompleto: ['', [Validators.required]],
-      tipoMensaje: ['', [Validators.required]],
-      correo: ['', [Validators.required]],
-      celular: ['', [Validators.required]],
-      mensaje: ['', [Validators.required]]
+      recordId : [this.recordId,[Validators.required]],
+      ciudadId: [this.ciudadId, [Validators.required]],
+      direccion: [this.direccion, [Validators.required]],
+      precioRenta: [this.precioRenta, [Validators.required]],
+      precioVenta: [this.precioVenta, [Validators.required]],
+      asesorId:[this.asesorId, [Validators.required]],
+      renta:[this.renta, [Validators.required]],
+      venta:[this.venta, [Validators.required]]
 
     });
   }
@@ -86,11 +88,14 @@ export class SolicitudComponent {
   EnviarCorreo() {
     let campos = this.ObtenerFormGroup;
     let datos = {
-      nombreCompleto: campos["nombreCompleto"].value,
-      tipoMensaje: campos["tipoMensaje"].value,
-      correo: campos["correo"].value,
-      celular: campos["celular"].value,
-      mensaje: campos["mensaje"].value
+      recordId:campos["id"].value,
+      direccion: campos["direccion"].value,
+      ciudadId: campos["ciudad"].value,
+      asesorId: campos["asesor"].value,
+      precioRenta: campos["precioRenta"].value,
+      precioVenta: campos["precioVenta"].value,
+      venta: campos["venta"].value,
+      renta: campos["renta"].value
     }
     console.log(datos);
     this.servicioLogicaNegocio.EnvioCorreoContactenos(datos).subscribe({
@@ -111,5 +116,7 @@ export class SolicitudComponent {
   goBack() {
     this.location.back();
   }
+
+
 
 }
