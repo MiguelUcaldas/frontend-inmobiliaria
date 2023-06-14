@@ -1,4 +1,7 @@
-<h3 style="font-family:Comic Sans MS; ;">Lista de Asesores</h3>
+<br />
+<a routerLink="/parametros/asesor-agregar" class="btn black" style="font-family: Comic Sans MS;">Agregar Registro</a>
+<br />
+<h3 style="font-family:Comic Sans MS;">Lista de Asesores</h3>
 <table>
 
     <thead>
@@ -12,10 +15,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let r of listaRegistros | paginate: { itemsPerPage: registrosPorPagina, currentPage: pag, totalItems: total }">
-        <td>{{r.primerNombre}} {{r.segundoNombre}} {{r.primerApellido}} {{r.segundoApellido}}</td>
-        <th>{{r.documento}}</th>
-        <td>{{r.correo}}</td>
-        <td>{{r.telefono}}</td>
+        <td style="font-family: Comic Sans MS;">{{r.primerNombre}} {{r.segundoNombre}} {{r.primerApellido}} {{r.segundoApellido}}</td>
+        <td style="font-family: Comic Sans MS;">{{r.documento}}</td>
+        <td style="font-family: Comic Sans MS;">{{r.correo}}</td>
+        <td style="font-family: Comic Sans MS;">{{r.telefono}}</td>
       </tr>
       <tr>
         <td colspan="5" style="font-family: Comic Sans MS;" >

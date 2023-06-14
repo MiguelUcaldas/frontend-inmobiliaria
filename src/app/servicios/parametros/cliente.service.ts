@@ -21,6 +21,7 @@ export class ClienteService {
     let limit = ConfiguracionPaginacion.registrosPorPagina;
     let skip = (pag - 1) * limit;
     let url = `${this.urlBase}cliente?filter={"limit":${limit}, "skip":${skip}}`;
+    console.log(this.http.get<PaginadorClienteModel>(url))
     return this.http.get<PaginadorClienteModel>(url);
   }
 }

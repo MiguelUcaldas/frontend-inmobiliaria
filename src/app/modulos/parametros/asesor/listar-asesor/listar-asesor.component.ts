@@ -14,8 +14,10 @@ export class ListarAsesorComponent {
   total = 0;
   registrosPorPagina = ConfiguracionPaginacion.registrosPorPagina;
   constructor(
-    private servicio: AsesorService)
-    {}
+    private servicio: AsesorService
+    ){
+      
+    }
 
     ngOnInit(){
       this.ListarRegistros();
